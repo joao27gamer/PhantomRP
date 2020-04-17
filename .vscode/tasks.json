@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+        "label": "build-normal",
+        "type": "shell",
+        "command": "${workspaceRoot}\\pawno\\pawncc.exe",
+        "args": [
+            "${relativeFile}",
+            "-d0",
+            "-r",
+            "-w"
+        ],
+        "group": {
+            "kind": "build",
+            "isDefault": true
+        },
+        "isBackground": false,
+        "presentation": {
+            "reveal": "silent",
+            "panel": "dedicated"
+        },
+        "problemMatcher": "$pawncc"
+    }
+]
+}

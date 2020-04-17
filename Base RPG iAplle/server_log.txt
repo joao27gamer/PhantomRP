@@ -1,0 +1,831 @@
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[22:27:05] 
+[22:27:05] Server Plugins
+[22:27:05] --------------
+[22:27:05]  Loading plugin: streamer
+[22:27:05] 
+
+*** Streamer Plugin v2.7.9 by Incognito loaded ***
+
+[22:27:05]   Loaded.
+[22:27:05]  Loading plugin: sscanf
+[22:27:05] 
+
+[22:27:05]  ===============================
+
+[22:27:05]       sscanf plugin loaded.     
+
+[22:27:05]          Version:  2.8.1        
+
+[22:27:05]    (c) 2012 Alex "Y_Less" Cole  
+
+[22:27:05]  ===============================
+
+[22:27:05]   Loaded.
+[22:27:05]  Loading plugin: pawncmd
+[22:27:05] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[22:27:05]   Loaded.
+[22:27:05]  Loading plugin: pawn-memory
+[22:27:05] ========================
+[22:27:05] = Memory access plugin =
+[22:27:05] =       Made by BigETI =
+[22:27:05] = Loaded!              =
+[22:27:05] ========================
+[22:27:05]   Loaded.
+[22:27:05]  Loaded 4 plugins.
+
+[22:27:05] 
+[22:27:05] Filterscripts
+[22:27:05] ---------------
+[22:27:05]   Loading filterscript 'TDE.amx'...
+[22:27:05]   Unable to load filterscript 'TDE.amx'.
+[22:27:05]   Loaded 0 filterscripts.
+
+[22:27:05] 
+----------------------------------
+[22:27:05]  KKKKKKK
+[22:27:05] ----------------------------------
+
+[22:27:05] Number of vehicle models: 3
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[22:27:56] filterscripts = ""  (string)
+[22:27:56] 
+[22:27:56] Server Plugins
+[22:27:56] --------------
+[22:27:56]  Loading plugin: streamer
+[22:27:56] 
+
+*** Streamer Plugin v2.7.9 by Incognito loaded ***
+
+[22:27:56]   Loaded.
+[22:27:56]  Loading plugin: sscanf
+[22:27:56] 
+
+[22:27:56]  ===============================
+
+[22:27:56]       sscanf plugin loaded.     
+
+[22:27:56]          Version:  2.8.1        
+
+[22:27:56]    (c) 2012 Alex "Y_Less" Cole  
+
+[22:27:56]  ===============================
+
+[22:27:56]   Loaded.
+[22:27:56]  Loading plugin: pawncmd
+[22:27:56] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[22:27:56]   Loaded.
+[22:27:56]  Loading plugin: pawn-memory
+[22:27:56] ========================
+[22:27:56] = Memory access plugin =
+[22:27:56] =       Made by BigETI =
+[22:27:56] = Loaded!              =
+[22:27:56] ========================
+[22:27:56]   Loaded.
+[22:27:56]  Loaded 4 plugins.
+
+[22:27:56] 
+[22:27:56] Filterscripts
+[22:27:56] ---------------
+[22:27:56]   Loaded 0 filterscripts.
+
+[22:27:56] 
+----------------------------------
+[22:27:56]  KKKKKKK
+[22:27:56] ----------------------------------
+
+[22:27:56] Number of vehicle models: 3
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[22:30:40] filterscripts = ""  (string)
+[22:30:40] 
+[22:30:40] Server Plugins
+[22:30:40] --------------
+[22:30:40]  Loading plugin: streamer
+[22:30:40] 
+
+*** Streamer Plugin v2.7.9 by Incognito loaded ***
+
+[22:30:40]   Loaded.
+[22:30:40]  Loading plugin: sscanf
+[22:30:40] 
+
+[22:30:40]  ===============================
+
+[22:30:40]       sscanf plugin loaded.     
+
+[22:30:40]          Version:  2.8.1        
+
+[22:30:40]    (c) 2012 Alex "Y_Less" Cole  
+
+[22:30:40]  ===============================
+
+[22:30:40]   Loaded.
+[22:30:40]  Loading plugin: pawncmd
+[22:30:40] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[22:30:40]   Loaded.
+[22:30:40]  Loading plugin: pawn-memory
+[22:30:40] ========================
+[22:30:40] = Memory access plugin =
+[22:30:40] =       Made by BigETI =
+[22:30:40] = Loaded!              =
+[22:30:40] ========================
+[22:30:40]   Loaded.
+[22:30:40]  Loaded 4 plugins.
+
+[22:30:40] 
+[22:30:40] Filterscripts
+[22:30:40] ---------------
+[22:30:40]   Loaded 0 filterscripts.
+
+[22:30:40] 
+---------------------------------------------------
+[22:30:40]  Gamemode Base RPG
+[22:30:40]  Créditos: iAplle pelo Gamemode
+[22:30:40]  Leonardo Bradoks pela agencia e o sistema de registro
+[22:30:40] -----------------------------------------------------
+
+[22:30:40] Number of vehicle models: 3
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[22:31:03] filterscripts = ""  (string)
+[22:31:03] 
+[22:31:03] Server Plugins
+[22:31:03] --------------
+[22:31:03]  Loading plugin: streamer
+[22:31:03] 
+
+*** Streamer Plugin v2.7.9 by Incognito loaded ***
+
+[22:31:03]   Loaded.
+[22:31:03]  Loading plugin: sscanf
+[22:31:03] 
+
+[22:31:03]  ===============================
+
+[22:31:03]       sscanf plugin loaded.     
+
+[22:31:03]          Version:  2.8.1        
+
+[22:31:03]    (c) 2012 Alex "Y_Less" Cole  
+
+[22:31:03]  ===============================
+
+[22:31:03]   Loaded.
+[22:31:03]  Loading plugin: pawncmd
+[22:31:03] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[22:31:03]   Loaded.
+[22:31:03]  Loading plugin: pawn-memory
+[22:31:03] ========================
+[22:31:03] = Memory access plugin =
+[22:31:03] =       Made by BigETI =
+[22:31:03] = Loaded!              =
+[22:31:03] ========================
+[22:31:03]   Loaded.
+[22:31:03]  Loaded 4 plugins.
+
+[22:31:03] 
+[22:31:03] Filterscripts
+[22:31:03] ---------------
+[22:31:03]   Loaded 0 filterscripts.
+
+[22:31:03] 
+----------------------------------------------------------------
+[22:31:03]  Gamemode Base RPG
+[22:31:03]  Créditos: iAplle pelo Gamemode
+[22:31:03]  Leonardo Bradoks pela agencia e o sistema de registro
+[22:31:03] ------------------------------------------------------------------
+
+[22:31:03] Number of vehicle models: 3
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[22:32:13] filterscripts = ""  (string)
+[22:32:13] 
+[22:32:13] Server Plugins
+[22:32:13] --------------
+[22:32:13]  Loading plugin: streamer
+[22:32:13] 
+
+*** Streamer Plugin v2.7.9 by Incognito loaded ***
+
+[22:32:13]   Loaded.
+[22:32:13]  Loading plugin: sscanf
+[22:32:13] 
+
+[22:32:13]  ===============================
+
+[22:32:13]       sscanf plugin loaded.     
+
+[22:32:13]          Version:  2.8.1        
+
+[22:32:13]    (c) 2012 Alex "Y_Less" Cole  
+
+[22:32:13]  ===============================
+
+[22:32:13]   Loaded.
+[22:32:13]  Loading plugin: pawncmd
+[22:32:13] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[22:32:13]   Loaded.
+[22:32:13]  Loading plugin: pawn-memory
+[22:32:13] ========================
+[22:32:13] = Memory access plugin =
+[22:32:13] =       Made by BigETI =
+[22:32:13] = Loaded!              =
+[22:32:13] ========================
+[22:32:13]   Loaded.
+[22:32:13]  Loaded 4 plugins.
+
+[22:32:13] 
+[22:32:13] Filterscripts
+[22:32:13] ---------------
+[22:32:13]   Loaded 0 filterscripts.
+
+[22:32:13] 
+----------------------------------------------------------------
+[22:32:13]  Gamemode Base RPG
+[22:32:13]  Créditos: iAplle pelo Gamemode
+[22:32:13]  Leonardo Bradoks pela agencia e o sistema de registro
+[22:32:13] ----------------------------------------------------------------
+
+[22:32:13] Number of vehicle models: 3
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[22:32:45] filterscripts = ""  (string)
+[22:32:45] 
+[22:32:45] Server Plugins
+[22:32:45] --------------
+[22:32:45]  Loading plugin: streamer
+[22:32:45] 
+
+*** Streamer Plugin v2.7.9 by Incognito loaded ***
+
+[22:32:45]   Loaded.
+[22:32:45]  Loading plugin: sscanf
+[22:32:45] 
+
+[22:32:45]  ===============================
+
+[22:32:45]       sscanf plugin loaded.     
+
+[22:32:45]          Version:  2.8.1        
+
+[22:32:45]    (c) 2012 Alex "Y_Less" Cole  
+
+[22:32:45]  ===============================
+
+[22:32:45]   Loaded.
+[22:32:45]  Loading plugin: pawncmd
+[22:32:45] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[22:32:45]   Loaded.
+[22:32:45]  Loading plugin: pawn-memory
+[22:32:45] ========================
+[22:32:45] = Memory access plugin =
+[22:32:45] =       Made by BigETI =
+[22:32:45] = Loaded!              =
+[22:32:45] ========================
+[22:32:45]   Loaded.
+[22:32:45]  Loaded 4 plugins.
+
+[22:32:45] 
+[22:32:45] Filterscripts
+[22:32:45] ---------------
+[22:32:45]   Loaded 0 filterscripts.
+
+[22:32:45] 
+----------------------------------------------------------------
+
+[22:32:45]  Gamemode Base RPG
+
+[22:32:45]  Créditos: iAplle pelo Gamemode
+
+[22:32:45]  Leonardo Bradoks pela agencia e o sistema de registro
+
+[22:32:45] ----------------------------------------------------------------
+
+[22:32:45] Number of vehicle models: 3
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[22:33:07] filterscripts = ""  (string)
+[22:33:07] 
+[22:33:07] Server Plugins
+[22:33:07] --------------
+[22:33:07]  Loading plugin: streamer
+[22:33:07] 
+
+*** Streamer Plugin v2.7.9 by Incognito loaded ***
+
+[22:33:07]   Loaded.
+[22:33:07]  Loading plugin: sscanf
+[22:33:07] 
+
+[22:33:07]  ===============================
+
+[22:33:07]       sscanf plugin loaded.     
+
+[22:33:07]          Version:  2.8.1        
+
+[22:33:07]    (c) 2012 Alex "Y_Less" Cole  
+
+[22:33:07]  ===============================
+
+[22:33:07]   Loaded.
+[22:33:07]  Loading plugin: pawncmd
+[22:33:07] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[22:33:07]   Loaded.
+[22:33:07]  Loading plugin: pawn-memory
+[22:33:07] ========================
+[22:33:07] = Memory access plugin =
+[22:33:07] =       Made by BigETI =
+[22:33:07] = Loaded!              =
+[22:33:07] ========================
+[22:33:07]   Loaded.
+[22:33:07]  Loaded 4 plugins.
+
+[22:33:07] 
+[22:33:07] Filterscripts
+[22:33:07] ---------------
+[22:33:07]   Loaded 0 filterscripts.
+
+[22:33:07] 
+----------------------------------------------------------------
+
+[22:33:07]  Gamemode Base RPG
+
+[22:33:07]  Créditos: iAplle pelo Gamemode
+
+[22:33:07]  Leonardo Bradoks pela agencia e o sistema de registro
+
+[22:33:07] ----------------------------------------------------------------
+
+[22:33:07] Number of vehicle models: 3
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[22:33:35] filterscripts = ""  (string)
+[22:33:35] 
+[22:33:35] Server Plugins
+[22:33:35] --------------
+[22:33:35]  Loading plugin: streamer
+[22:33:35] 
+
+*** Streamer Plugin v2.7.9 by Incognito loaded ***
+
+[22:33:35]   Loaded.
+[22:33:35]  Loading plugin: sscanf
+[22:33:35] 
+
+[22:33:35]  ===============================
+
+[22:33:35]       sscanf plugin loaded.     
+
+[22:33:35]          Version:  2.8.1        
+
+[22:33:35]    (c) 2012 Alex "Y_Less" Cole  
+
+[22:33:35]  ===============================
+
+[22:33:35]   Loaded.
+[22:33:35]  Loading plugin: pawncmd
+[22:33:35] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[22:33:35]   Loaded.
+[22:33:35]  Loading plugin: pawn-memory
+[22:33:35] ========================
+[22:33:35] = Memory access plugin =
+[22:33:35] =       Made by BigETI =
+[22:33:35] = Loaded!              =
+[22:33:35] ========================
+[22:33:35]   Loaded.
+[22:33:35]  Loaded 4 plugins.
+
+[22:33:35] 
+[22:33:35] Filterscripts
+[22:33:35] ---------------
+[22:33:35]   Loaded 0 filterscripts.
+
+[22:33:35] 
+----------------------------------------------------------------
+
+[22:33:35]  Gamemode Base RPG
+
+[22:33:35]  Créditos: iAplle pelo Gamemode
+
+[22:33:35]  Leonardo Bradoks pela agencia e o sistema de registro
+
+[22:33:35] ----------------------------------------------------------------
+
+[22:33:35] Number of vehicle models: 3
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[22:36:22] filterscripts = ""  (string)
+[22:36:22] 
+[22:36:22] Server Plugins
+[22:36:22] --------------
+[22:36:22]  Loading plugin: streamer
+[22:36:22] 
+
+*** Streamer Plugin v2.7.9 by Incognito loaded ***
+
+[22:36:22]   Loaded.
+[22:36:22]  Loading plugin: sscanf
+[22:36:22] 
+
+[22:36:22]  ===============================
+
+[22:36:22]       sscanf plugin loaded.     
+
+[22:36:22]          Version:  2.8.1        
+
+[22:36:22]    (c) 2012 Alex "Y_Less" Cole  
+
+[22:36:22]  ===============================
+
+[22:36:22]   Loaded.
+[22:36:22]  Loading plugin: pawncmd
+[22:36:22] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[22:36:22]   Loaded.
+[22:36:22]  Loading plugin: pawn-memory
+[22:36:22] ========================
+[22:36:22] = Memory access plugin =
+[22:36:22] =       Made by BigETI =
+[22:36:22] = Loaded!              =
+[22:36:22] ========================
+[22:36:22]   Loaded.
+[22:36:22]  Loaded 4 plugins.
+
+[22:36:22] 
+[22:36:22] Filterscripts
+[22:36:22] ---------------
+[22:36:22]   Loaded 0 filterscripts.
+
+[22:36:22] 
+----------------------------------------------------------------
+
+[22:36:22]  Gamemode Base RPG
+
+[22:36:22]  Créditos: iAplle pelo Gamemode
+
+[22:36:22]  Leonardo Bradoks pela agencia e o sistema de registro
+
+[22:36:22] ----------------------------------------------------------------
+
+[22:36:22] Number of vehicle models: 3
+[22:37:18] [connection] 192.168.1.9:54092 requests connection cookie.
+[22:37:19] [connection] incoming connection: 192.168.1.9:54092 id: 0
+[22:37:19] [join] iAplle has joined the server (0:192.168.1.9)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[22:38:23] filterscripts = ""  (string)
+[22:38:23] 
+[22:38:23] Server Plugins
+[22:38:23] --------------
+[22:38:23]  Loading plugin: streamer
+[22:38:23] 
+
+*** Streamer Plugin v2.7.9 by Incognito loaded ***
+
+[22:38:23]   Loaded.
+[22:38:23]  Loading plugin: sscanf
+[22:38:23] 
+
+[22:38:23]  ===============================
+
+[22:38:23]       sscanf plugin loaded.     
+
+[22:38:23]          Version:  2.8.1        
+
+[22:38:23]    (c) 2012 Alex "Y_Less" Cole  
+
+[22:38:23]  ===============================
+
+[22:38:23]   Loaded.
+[22:38:23]  Loading plugin: pawncmd
+[22:38:23] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[22:38:23]   Loaded.
+[22:38:23]  Loading plugin: pawn-memory
+[22:38:23] ========================
+[22:38:23] = Memory access plugin =
+[22:38:23] =       Made by BigETI =
+[22:38:23] = Loaded!              =
+[22:38:23] ========================
+[22:38:23]   Loaded.
+[22:38:23]  Loaded 4 plugins.
+
+[22:38:23] 
+[22:38:23] Filterscripts
+[22:38:23] ---------------
+[22:38:23]   Loaded 0 filterscripts.
+
+[22:38:23] 
+----------------------------------------------------------------
+
+[22:38:23]  Gamemode Base RPG
+
+[22:38:23]  Créditos: iAplle pelo Gamemode
+
+[22:38:23]  Leonardo Bradoks pela agencia e o sistema de registro
+
+[22:38:23] ----------------------------------------------------------------
+
+[22:38:23] Number of vehicle models: 3
+[22:38:32] [connection] 192.168.1.9:61767 requests connection cookie.
+[22:38:33] [connection] incoming connection: 192.168.1.9:61767 id: 0
+[22:38:33] [join] iAplle has joined the server (0:192.168.1.9)
+[22:39:01] [part] iAplle has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:41:53] filterscripts = ""  (string)
+[00:41:53] 
+[00:41:53] Server Plugins
+[00:41:53] --------------
+[00:41:53]  Loading plugin: streamer
+[00:41:54] 
+
+*** Streamer Plugin v2.7.9 by Incognito loaded ***
+
+[00:41:54]   Loaded.
+[00:41:54]  Loading plugin: sscanf
+[00:41:54] 
+
+[00:41:54]  ===============================
+
+[00:41:54]       sscanf plugin loaded.     
+
+[00:41:54]          Version:  2.8.1        
+
+[00:41:54]    (c) 2012 Alex "Y_Less" Cole  
+
+[00:41:54]  ===============================
+
+[00:41:54]   Loaded.
+[00:41:54]  Loading plugin: pawncmd
+[00:41:54] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[00:41:54]   Loaded.
+[00:41:54]  Loading plugin: pawn-memory
+[00:41:54] ========================
+[00:41:54] = Memory access plugin =
+[00:41:54] =       Made by BigETI =
+[00:41:54] = Loaded!              =
+[00:41:54] ========================
+[00:41:54]   Loaded.
+[00:41:54]  Loaded 4 plugins.
+
+[00:41:55] 
+[00:41:55] Filterscripts
+[00:41:55] ---------------
+[00:41:55]   Loaded 0 filterscripts.
+
+[00:41:55] 
+----------------------------------------------------------------
+
+[00:41:55]  Gamemode Base RPG
+
+[00:41:55]  Créditos: iAplle pelo Gamemode
+
+[00:41:55]  Leonardo Bradoks pela agencia e o sistema de registro
+
+[00:41:55] ----------------------------------------------------------------
+
+[00:41:55] Number of vehicle models: 3
+[00:42:45] (TimerFix) WARNING: The function "AtualizarText" took 17ms to execute! This will affect other timers.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:43:07] 
+[00:43:07] Server Plugins
+[00:43:07] --------------
+[00:43:07]  Loading plugin: streamer
+[00:43:07] 
+
+*** Streamer Plugin v2.7.9 by Incognito loaded ***
+
+[00:43:07]   Loaded.
+[00:43:07]  Loading plugin: sscanf
+[00:43:07] 
+
+[00:43:07]  ===============================
+
+[00:43:07]       sscanf plugin loaded.     
+
+[00:43:07]          Version:  2.8.1        
+
+[00:43:07]    (c) 2012 Alex "Y_Less" Cole  
+
+[00:43:07]  ===============================
+
+[00:43:07]   Loaded.
+[00:43:07]  Loading plugin: pawncmd
+[00:43:07] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[00:43:07]   Loaded.
+[00:43:07]  Loading plugin: pawn-memory
+[00:43:07] ========================
+[00:43:07] = Memory access plugin =
+[00:43:07] =       Made by BigETI =
+[00:43:07] = Loaded!              =
+[00:43:07] ========================
+[00:43:08]   Loaded.
+[00:43:08]  Loaded 4 plugins.
+
+[00:43:08] 
+[00:43:08] Filterscripts
+[00:43:08] ---------------
+[00:43:08]   Loading filterscript 'Teste.amx'...
+[00:43:08]   Loaded 1 filterscripts.
+
+[00:43:08] 
+----------------------------------------------------------------
+
+[00:43:08]  Gamemode Base RPG
+
+[00:43:08]  Créditos: iAplle pelo Gamemode
+
+[00:43:08]  Leonardo Bradoks pela agencia e o sistema de registro
+
+[00:43:08] ----------------------------------------------------------------
+
+[00:43:08] Number of vehicle models: 3
+[00:43:19] (TimerFix) WARNING: The function "AtualizarText" took 41ms to execute! This will affect other timers.
+[00:43:59] [connection] 192.168.15.7:55416 requests connection cookie.
+[00:44:00] [connection] incoming connection: 192.168.15.7:55416 id: 0
+[00:44:00] [join] J_otace has joined the server (0:192.168.15.7)
+[00:44:09] (TimerFix) WARNING: The function "AtualizarText" took 11ms to execute! This will affect other timers.
+[00:44:29] (TimerFix) WARNING: The function "AtualizarText" took 17ms to execute! This will affect other timers.
+[00:44:30] (TimerFix) WARNING: The function "AtualizarText" took 13ms to execute! This will affect other timers.
+[00:45:09] [part] J_otace has left the server (0:1)
+[00:45:10] (TimerFix) WARNING: The function "AtualizarText" took 12ms to execute! This will affect other timers.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:46:15] 
+[00:46:15] Server Plugins
+[00:46:15] --------------
+[00:46:15]  Loading plugin: streamer
+[00:46:15] 
+
+*** Streamer Plugin v2.7.9 by Incognito loaded ***
+
+[00:46:15]   Loaded.
+[00:46:15]  Loading plugin: sscanf
+[00:46:15] 
+
+[00:46:15]  ===============================
+
+[00:46:15]       sscanf plugin loaded.     
+
+[00:46:15]          Version:  2.8.1        
+
+[00:46:15]    (c) 2012 Alex "Y_Less" Cole  
+
+[00:46:15]  ===============================
+
+[00:46:15]   Loaded.
+[00:46:15]  Loading plugin: pawncmd
+[00:46:15] Pawn.CMD plugin v3.2.0 by urShadow has been loaded
+[00:46:15]   Loaded.
+[00:46:15]  Loading plugin: pawn-memory
+[00:46:15] ========================
+[00:46:15] = Memory access plugin =
+[00:46:15] =       Made by BigETI =
+[00:46:15] = Loaded!              =
+[00:46:15] ========================
+[00:46:15]   Loaded.
+[00:46:15]  Loaded 4 plugins.
+
+[00:46:15] 
+[00:46:15] Filterscripts
+[00:46:15] ---------------
+[00:46:15]   Loading filterscript 'Teste.amx'...
+[00:46:15]   Loaded 1 filterscripts.
+
+[00:46:15] 
+----------------------------------------------------------------
+
+[00:46:15]  Gamemode Base RPG
+
+[00:46:15]  Créditos: iAplle pelo Gamemode
+
+[00:46:15]  Leonardo Bradoks pela agencia e o sistema de registro
+
+[00:46:15] ----------------------------------------------------------------
+
+[00:46:15] Number of vehicle models: 3
+[00:46:47] [connection] 192.168.15.7:50548 requests connection cookie.
+[00:46:48] [connection] incoming connection: 192.168.15.7:50548 id: 0
+[00:46:48] [join] J_otace has joined the server (0:192.168.15.7)
+[00:47:11] (TimerFix) WARNING: The function "AtualizarText" took 12ms to execute! This will affect other timers.
+[00:48:17] [part] J_otace has left the server (0:1)
+[00:48:57] [connection] 192.168.15.7:58360 requests connection cookie.
+[00:48:58] [connection] incoming connection: 192.168.15.7:58360 id: 0
+[00:48:58] [join] J_otace has joined the server (0:192.168.15.7)
+[00:49:11] [part] J_otace has left the server (0:1)
+[00:49:16] (TimerFix) WARNING: The function "AtualizarText" took 16ms to execute! This will affect other timers.
+[00:49:38] [connection] 192.168.15.7:58361 requests connection cookie.
+[00:49:39] [connection] incoming connection: 192.168.15.7:58361 id: 0
+[00:49:40] [join] J_otace has joined the server (0:192.168.15.7)
+[00:50:03] (TimerFix) WARNING: The function "AtualizarText" took 40ms to execute! This will affect other timers.
+[00:50:51] (TimerFix) WARNING: The function "AtualizarText" took 20ms to execute! This will affect other timers.
+[00:50:51] [connection] 127.0.0.1:54602 requests connection cookie.
+[00:50:52] [connection] incoming connection: 127.0.0.1:54602 id: 1
+[00:51:19] (TimerFix) WARNING: The function "AtualizarText" took 11ms to execute! This will affect other timers.
+[00:51:34] (TimerFix) WARNING: The function "AtualizarText" took 11ms to execute! This will affect other timers.
+[00:59:52] (TimerFix) WARNING: The function "AtualizarText" took 17ms to execute! This will affect other timers.
+[01:25:38] (TimerFix) WARNING: The function "AtualizarText" took 11ms to execute! This will affect other timers.
+[01:37:55] (TimerFix) WARNING: The function "AtualizarText" took 13ms to execute! This will affect other timers.
+[01:53:02] (TimerFix) WARNING: The function "AtualizarText" took 18ms to execute! This will affect other timers.
+[02:08:09] (TimerFix) WARNING: The function "AtualizarText" took 12ms to execute! This will affect other timers.
+[02:39:17] (TimerFix) WARNING: The function "AtualizarText" took 17ms to execute! This will affect other timers.
+[02:42:52] (TimerFix) WARNING: The function "AtualizarText" took 14ms to execute! This will affect other timers.
+[03:07:20] (TimerFix) WARNING: The function "AtualizarText" took 19ms to execute! This will affect other timers.
+[03:39:11] (TimerFix) WARNING: The function "AtualizarText" took 38ms to execute! This will affect other timers.
+[03:47:13] (TimerFix) WARNING: The function "AtualizarText" took 21ms to execute! This will affect other timers.
+[04:28:12] (TimerFix) WARNING: The function "AtualizarText" took 14ms to execute! This will affect other timers.
+[04:53:11] (TimerFix) WARNING: The function "AtualizarText" took 43ms to execute! This will affect other timers.

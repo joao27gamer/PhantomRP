@@ -1,0 +1,36 @@
+CLASSE BAIXA
+entregador de jornal // 0xC5E6EDFF
+entregador de pizza // 0xFF8000FF
+caminhoneiro // 0x804000FF
+taxista // 0xFFFF00FF
+leiteiro // 0xC0C0C0FF
+correios // 0x408080FF
+mecanico // 0x808080FF
+motorista de onibus // 0x8080C0FF
+piloto // 0x80FF00FF
+segurança // 0x0080C0FF
+
+CLASSE MEDIA
+Motorista de carro forte // 0x3A3A3AFF
+advogado // 0x400080FF
+paramedico // 0x00FF9FFF
+bombeiro // 0xFF8080FF
+Policial militar // 0x0080FFFF
+Policial federal // 0x004080FF
+
+
+CLASSE ALTA
+corregedoria // 0x8000FFFF
+Delegado // 0x400040FF
+FBI // 0x000040FF
+CIA // 0x000080FF
+SWAT // 0x0000FFFF
+Narcóticos // 0xA000FFFF
+interpol // 0xA0A0FFFF
+
+MILITAR
+exercito // 0x008000FF
+marinha // 0x5CB6BAFF
+aeronautica // 0xA2C4C4FF
+
+
