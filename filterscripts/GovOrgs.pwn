@@ -103,8 +103,6 @@ new pckPrefT2, pckBankT2, pckDetranT2, pckPoliceT2, pckAET2, pckAutoT2;
 
 new pckpPizza, pckpPizzaT;
 
-new profJornal, profPizza;
-new profJornal2, profPizza2;
 
 
 new inpref[MAX_PLAYERS];
@@ -243,7 +241,7 @@ public updateactor(playerid){
 	return 1;
 }
 
-new multas[MAX_PLAYERS];
+
 forward CheckPref(playerid);
 public CheckPref(playerid){
 	new Keys, ud, lr, file[128], msg[128];
@@ -626,11 +624,6 @@ public OnFilterScriptInit()
 	actDetranT = CreatePickup(1239, 1, 822.730041, 3.0, 1004.179687, 0)
 	actDetranT2 = Text3D:Create3DTextLabel("{FF8000}Detran\n {FFFFFF}Pressione \"Y\"", -1, 822.730041, 3.0, 1004.179687, 20.0, 0);
 
-	new mecanicopckp, mecanicoT;
-	mecanicopckp = CreatePickup(1239, 1, 2525.472167, -1952.905029, 12.046875, 0);
-	mecanicoT = Text3D:Create3DTextLabel("{FF8000}Mecanico\n {FFFFFF}Pressione \"Y\"", -1, 2525.472167, -1952.905029, 12.046875, 50.0, 0);
-
-
 	profJornal = CreatePickup(1210, 1, 784.719726, -1332.507812, 13.541118, 0);
 	profJornal2= Text3D:Create3DTextLabel("{FF8000}Entregador de jornal\n {FFFFFF}Digite /profissao", -1, 784.719726, -1332.507812, 13.541118, 20.0, 0);
 
@@ -643,8 +636,8 @@ public OnFilterScriptInit()
 	pckpPizza = CreatePickup(1239, 1, 2122.837402, -1784.188720, 13.387416, 0);
 	pckpPizzaT = Text3D:Create3DTextLabel("{FF8000}Entregador de pizza\n {FFFFFF}Pressione \"Y\"", -1, 2122.837402, -1784.188720, 13.387416, 10.0, 0);
 
-	pckptaxi = CreatePickup(1239, 1, 1807.791015, -1918.288696, 13.565514, 0);
-	pckptaxiT = Text3D:Create3DTextLabel("{FF8000}Taxista\n {FFFFFF}Pressione \"Y\"", -1, 1807.791015, -1918.288696, 13.565514, 10.0, 0);
+	//pckptaxi = CreatePickup(1239, 1, 1807.791015, -1918.288696, 13.565514, 0);
+	//pckptaxiT = Text3D:Create3DTextLabel("{FF8000}Taxista\n {FFFFFF}Pressione \"Y\"", -1, 1807.791015, -1918.288696, 13.565514, 10.0, 0);
 	
 
 	//actPref = CreateDynamicActor(141, 359.721221, 193.555374, 1008.389343, 268.450744, 1, 100.0, -1, 3);

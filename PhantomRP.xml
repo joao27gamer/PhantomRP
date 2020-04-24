@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<?xml-stylesheet href="file:///C|/Users/X/Desktop/PhantomRP/pawno/xml/pawndoc.xsl" type="text/xsl"?>
+<?xml-stylesheet href="file:///C|/Users/Lilith/Desktop/PhantomRP/pawno/xml/pawndoc.xsl" type="text/xsl"?>
 <doc source="gamemodes\PhantomRP.pwn">
 	<assembly>
 		<name>PhantomRP.pwn</name>
@@ -7,6 +7,25 @@
 	<members>
 
 		<!-- enumerations -->
+		<member name="T:radar" value="6">
+			<tagname value="radar"/>
+			<member name="C:idDoRadar" value="0">
+			</member>
+			<member name="C:lPosX" value="1">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:lPosY" value="2">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:lPosZ" value="3">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:lAngulo" value="4">
+				<tagname value="Float"/>
+			</member>
+			<member name="C:lVelocidade" value="5">
+			</member>
+		</member>
 
 		<!-- constants -->
 		<member name="C:cellmax" value="2147483647">
@@ -33,8 +52,22 @@
 			<referrer name="fwritechars"/>
 			<referrer name="DOF2_SortAllSections"/>
 			<referrer name="DOF2_SortSection"/>
+			<referrer name="KickPlayer"/>
+			<referrer name="CheckOrgs"/>
+			<referrer name="CheckSaidas"/>
+			<referrer name="CheckCasas"/>
+			<referrer name="CheckProfs"/>
 			<referrer name="SSCANF_OnPlayerConnect"/>
+			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
+			<referrer name="OnDialogResponse"/>
+			<referrer name="OnPlayerExitVehicle"/>
+			<referrer name="OnVehicleDeath"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="OnPlayerEnterVehicle"/>
+			<referrer name="cmd_pegarjornal"/>
+			<referrer name="cmd_pegarpizza"/>
 		</member>
 		<member name="C:true" value="1">
 			<tagname value="bool"/>
@@ -54,11 +87,35 @@
 			<referrer name="DOF2_SortSection"/>
 			<referrer name="OnFilterScriptInit"/>
 			<referrer name="zcmd_OnGameModeInit"/>
+			<referrer name="activateOrgs"/>
+			<referrer name="activateSaidas"/>
+			<referrer name="activateCasas"/>
+			<referrer name="CheckOrgs"/>
+			<referrer name="CheckProfs"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
+			<referrer name="SSCANF_OnPlayerConnect"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
+			<referrer name="OnDialogResponse"/>
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="OnPlayerEnterVehicle"/>
+			<referrer name="cmd_pegarjornal"/>
+			<referrer name="cmd_pegarpizza"/>
 		</member>
 
 		<!-- variables -->
 		<member name="F:CELLMIN_ON_MATCHES">
+		</member>
+		<member name="F:Caminhao">
+			<tagname value="bool"/>
+		</member>
+		<member name="F:Casas">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:CasasID">
+			<referrer name="cmd_createcasa"/>
+		</member>
+		<member name="F:CasasT">
+			<referrer name="SSCANF_OnGameModeInit"/>
 		</member>
 		<member name="F:CaseSensitive">
 			<tagname value="bool"/>
@@ -75,6 +132,12 @@
 			<tagname value="PlayerText"/>
 			<referrer name="UpdateClock"/>
 			<referrer name="CreateClock"/>
+		</member>
+		<member name="F:CmnhT">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:CmnhT2">
+			<referrer name="SSCANF_OnGameModeInit"/>
 		</member>
 		<member name="F:CurrentFile">
 			<referrer name="DOF2_SetFile"/>
@@ -96,6 +159,15 @@
 			<referrer name="DOF2_ReparseFile"/>
 			<referrer name="DOF2_SortAllSections"/>
 			<referrer name="DOF2_SortSection"/>
+		</member>
+		<member name="F:Empresa">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:EmpresaT">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:EmpresasID">
+			<referrer name="cmd_createemp"/>
 		</member>
 		<member name="F:Entries_Count">
 			<referrer name="DOF2_SearchEntry"/>
@@ -154,6 +226,41 @@
 			<referrer name="DOF2_WriteFile"/>
 			<referrer name="DOF2_ParseFile"/>
 		</member>
+		<member name="F:Governo">
+			<referrer name="SSCANF_OnGameModeInit"/>
+			<referrer name="cmd_createhotel"/>
+			<referrer name="cmd_createpizza"/>
+			<referrer name="cmd_createlanche"/>
+			<referrer name="cmd_createdp"/>
+			<referrer name="cmd_createprefeitura"/>
+			<referrer name="cmd_createae"/>
+			<referrer name="cmd_createdetran"/>
+			<referrer name="cmd_createauto"/>
+			<referrer name="cmd_createbank"/>
+		</member>
+		<member name="F:GovernoT">
+			<referrer name="SSCANF_OnGameModeInit"/>
+			<referrer name="cmd_createhotel"/>
+			<referrer name="cmd_createpizza"/>
+			<referrer name="cmd_createlanche"/>
+			<referrer name="cmd_createdp"/>
+			<referrer name="cmd_createprefeitura"/>
+			<referrer name="cmd_createae"/>
+			<referrer name="cmd_createdetran"/>
+			<referrer name="cmd_createauto"/>
+			<referrer name="cmd_createbank"/>
+		</member>
+		<member name="F:InfoRadar">
+			<referrer name="LoadRadares"/>
+			<referrer name="CheckRadar"/>
+		</member>
+		<member name="F:JornalT">
+			<tagname value="bool"/>
+			<referrer name="OnVehicleDeath"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="cmd_pegarjornal"/>
+		</member>
 		<member name="F:Logado">
 			<tagname value="bool"/>
 			<referrer name="SSCANF_OnPlayerDisconnect"/>
@@ -167,12 +274,48 @@
 		</member>
 		<member name="F:OLD_DEFAULT_NAME">
 		</member>
+		<member name="F:OrgsID">
+			<referrer name="SSCANF_OnGameModeInit"/>
+			<referrer name="cmd_createhotel"/>
+			<referrer name="cmd_createpizza"/>
+			<referrer name="cmd_createlanche"/>
+			<referrer name="cmd_createdp"/>
+			<referrer name="cmd_createprefeitura"/>
+			<referrer name="cmd_createae"/>
+			<referrer name="cmd_createdetran"/>
+			<referrer name="cmd_createauto"/>
+			<referrer name="cmd_createbank"/>
+		</member>
+		<member name="F:Pbike">
+			<referrer name="OnVehicleDeath"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="cmd_pegarpizza"/>
+		</member>
+		<member name="F:PbikeT">
+			<referrer name="OnVehicleDeath"/>
+		</member>
+		<member name="F:PizzaT">
+			<tagname value="bool"/>
+			<referrer name="OnVehicleDeath"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="cmd_pegarpizza"/>
+		</member>
+		<member name="F:Pizzas">
+			<referrer name="OnVehicleDeath"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="cmd_pegarpizza"/>
+		</member>
 		<member name="F:PlayerTD">
 			<tagname value="PlayerText"/>
 			<referrer name="CreateInicial"/>
 			<referrer name="DestroyInicial"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
 			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="F:RadarID">
+			<referrer name="LoadRadares"/>
 		</member>
 		<member name="F:SSCANF_QUIET">
 		</member>
@@ -182,6 +325,10 @@
 			<referrer name="zcmd_OnGameModeInit"/>
 		</member>
 		<member name="F:SSCANF_g_sPlayers">
+		</member>
+		<member name="F:SaidasID">
+			<referrer name="SSCANF_OnGameModeInit"/>
+			<referrer name="cmd_createsaida"/>
 		</member>
 		<member name="F:Sections_Count">
 			<referrer name="DOF2_SectionExists"/>
@@ -229,6 +376,10 @@
 			<referrer name="DOF2_RenameKey"/>
 			<referrer name="DOF2_ParseFile"/>
 		</member>
+		<member name="F:TRadar">
+			<tagname value="Text3D"/>
+			<referrer name="LoadRadares"/>
+		</member>
 		<member name="F:UseUTF8">
 			<tagname value="bool"/>
 			<referrer name="DOF2_SetUTF8"/>
@@ -237,9 +388,312 @@
 			<referrer name="DOF2_ParseFile"/>
 			<referrer name="fwritechars"/>
 		</member>
+		<member name="F:Variavel">
+			<referrer name="CheckRadar"/>
+		</member>
+		<member name="F:actAE">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:actAET">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:actAET2">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:actAuto">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:actAutoT">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:actAutoT2">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:actBank">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:actBankT">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:actBankT2">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:actDetran">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:actDetranT">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:actDetranT2">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:actPolice">
+		</member>
+		<member name="F:actPoliceT">
+		</member>
+		<member name="F:actPoliceT2">
+		</member>
+		<member name="F:actPref">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:actPrefT">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:actPrefT2">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:aereo">
+			<tagname value="bool"/>
+			<referrer name="OnDialogResponse"/>
+			<referrer name="OnPlayerExitVehicle"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="OnPlayerDeath"/>
+		</member>
+		<member name="F:aquatico">
+			<tagname value="bool"/>
+			<referrer name="OnDialogResponse"/>
+			<referrer name="OnPlayerExitVehicle"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="OnPlayerDeath"/>
+		</member>
+		<member name="F:autoescola">
+			<tagname value="bool"/>
+			<referrer name="OnDialogResponse"/>
+			<referrer name="OnPlayerExitVehicle"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="OnPlayerDeath"/>
+		</member>
+		<member name="F:bankmoney">
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="F:bike1">
+			<referrer name="CheckProfs"/>
+			<referrer name="OnVehicleDeath"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="cmd_pegarjornal"/>
+		</member>
+		<member name="F:bike2">
+			<tagname value="bool"/>
+			<referrer name="CheckProfs"/>
+			<referrer name="OnVehicleDeath"/>
+		</member>
+		<member name="F:bikeT">
+			<referrer name="CheckProfs"/>
+		</member>
+		<member name="F:casass">
+			<tagname value="Float"/>
+			<referrer name="casas"/>
+		</member>
+		<member name="F:casax">
+			<tagname value="Float"/>
+			<referrer name="casas"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="cmd_pegarjornal"/>
+			<referrer name="cmd_pegarpizza"/>
+		</member>
+		<member name="F:casay">
+			<tagname value="Float"/>
+			<referrer name="casas"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="cmd_pegarjornal"/>
+			<referrer name="cmd_pegarpizza"/>
+		</member>
+		<member name="F:casaz">
+			<tagname value="Float"/>
+			<referrer name="casas"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="cmd_pegarjornal"/>
+			<referrer name="cmd_pegarpizza"/>
+		</member>
+		<member name="F:cmnh">
+		</member>
 		<member name="F:confsenha">
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
 			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="F:cp">
+			<referrer name="OnDialogResponse"/>
+			<referrer name="OnPlayerExitVehicle"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="OnPlayerDeath"/>
+		</member>
+		<member name="F:cpaereo">
+			<referrer name="OnDialogResponse"/>
+			<referrer name="OnPlayerExitVehicle"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="OnPlayerDeath"/>
+		</member>
+		<member name="F:cpagua">
+			<referrer name="OnPlayerExitVehicle"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="OnPlayerDeath"/>
+		</member>
+		<member name="F:death">
+			<tagname value="bool"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnPlayerDeath"/>
+		</member>
+		<member name="F:h1">
+			<tagname value="Float"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnPlayerDeath"/>
+		</member>
+		<member name="F:h2">
+			<tagname value="Float"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnPlayerDeath"/>
+		</member>
+		<member name="F:h3">
+			<tagname value="Float"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnPlayerDeath"/>
+		</member>
+		<member name="F:h4">
+			<tagname value="Float"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnPlayerDeath"/>
+		</member>
+		<member name="F:h5">
+			<tagname value="Float"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnPlayerDeath"/>
+		</member>
+		<member name="F:inpref">
+			<referrer name="CheckOrgs"/>
+			<referrer name="CheckSaidas"/>
+		</member>
+		<member name="F:jornais">
+			<referrer name="OnVehicleDeath"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="cmd_pegarjornal"/>
+		</member>
+		<member name="F:lastx">
+			<tagname value="float"/>
+			<referrer name="CheckOrgs"/>
+			<referrer name="CheckSaidas"/>
+			<referrer name="CheckCasas"/>
+		</member>
+		<member name="F:lasty">
+			<tagname value="float"/>
+			<referrer name="CheckOrgs"/>
+			<referrer name="CheckSaidas"/>
+			<referrer name="CheckCasas"/>
+		</member>
+		<member name="F:lastz">
+			<tagname value="float"/>
+			<referrer name="CheckOrgs"/>
+			<referrer name="CheckSaidas"/>
+			<referrer name="CheckCasas"/>
+		</member>
+		<member name="F:lx">
+			<tagname value="float"/>
+			<referrer name="OnDialogResponse"/>
+			<referrer name="OnPlayerExitVehicle"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+		</member>
+		<member name="F:ly">
+			<tagname value="float"/>
+			<referrer name="OnDialogResponse"/>
+			<referrer name="OnPlayerExitVehicle"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+		</member>
+		<member name="F:lz">
+			<tagname value="float"/>
+			<referrer name="OnDialogResponse"/>
+			<referrer name="OnPlayerExitVehicle"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+		</member>
+		<member name="F:mssn">
+			<tagname value="bool"/>
+		</member>
+		<member name="F:multas">
+			<referrer name="CheckPref"/>
+			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="F:nextx">
+			<tagname value="Float"/>
+			<referrer name="casas"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="cmd_pegarjornal"/>
+			<referrer name="cmd_pegarpizza"/>
+		</member>
+		<member name="F:nexty">
+			<tagname value="Float"/>
+			<referrer name="casas"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="cmd_pegarjornal"/>
+			<referrer name="cmd_pegarpizza"/>
+		</member>
+		<member name="F:nextz">
+			<tagname value="Float"/>
+			<referrer name="casas"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="cmd_pegarjornal"/>
+			<referrer name="cmd_pegarpizza"/>
+		</member>
+		<member name="F:onvehicle">
+			<tagname value="bool"/>
+			<referrer name="OnPlayerEnterVehicle"/>
+		</member>
+		<member name="F:pckAET">
+		</member>
+		<member name="F:pckAET2">
+		</member>
+		<member name="F:pckAutoT">
+		</member>
+		<member name="F:pckAutoT2">
+		</member>
+		<member name="F:pckBankT">
+		</member>
+		<member name="F:pckBankT2">
+		</member>
+		<member name="F:pckDetranT">
+		</member>
+		<member name="F:pckDetranT2">
+		</member>
+		<member name="F:pckPoliceT">
+		</member>
+		<member name="F:pckPoliceT2">
+		</member>
+		<member name="F:pckPrefT">
+		</member>
+		<member name="F:pckPrefT2">
+		</member>
+		<member name="F:pckpJornal">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:pckpJornalT">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:pckpPizza">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:pckpPizzaT">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:profJornal">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:profJornal2">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:profPizza">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:profPizza2">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:radarid">
+		</member>
+		<member name="F:s">
+			<referrer name="SSCANF_OnGameModeInit"/>
+			<referrer name="cmd_createsaida"/>
+		</member>
+		<member name="F:s2">
+			<referrer name="SSCANF_OnGameModeInit"/>
+			<referrer name="cmd_createsaida"/>
 		</member>
 		<member name="F:senha">
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
@@ -248,6 +702,34 @@
 		<member name="F:senhalogin">
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
 			<referrer name="OnDialogResponse"/>
+		</member>
+		<member name="F:timerOrgs">
+			<referrer name="activateOrgs"/>
+			<referrer name="CheckSaidas"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:timerRecupOrgs">
+		</member>
+		<member name="F:timerRecupS">
+		</member>
+		<member name="F:timerSaida">
+			<referrer name="activateSaidas"/>
+			<referrer name="CheckOrgs"/>
+			<referrer name="CheckCasas"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:tmrCasas">
+			<referrer name="activateCasas"/>
+			<referrer name="CheckSaidas"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:tmrKick">
+			<referrer name="SSCANF_OnPlayerDisconnect"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnPlayerClickPlayerTextDraw"/>
+		</member>
+		<member name="F:tmrRadar">
+			<referrer name="SSCANF_OnPlayerDisconnect"/>
 		</member>
 		<member name="F:tmrclock">
 			<referrer name="SSCANF_OnPlayerDisconnect"/>
@@ -378,6 +860,7 @@
 		<member name="M:operator*(Float:,_:)" syntax="operator*(Float:,_:)(oper1, oper2)">
 			<tagname value="Float"/>
 			<stacksize value="4"/>
+			<referrer name="CheckRadar"/>
 			<dependency name="float"/>
 			<dependency name="floatmul"/>
 			<param name="oper1">
@@ -425,11 +908,22 @@
 			<tagname value="Float"/>
 			<attribute name="native"/>
 			<referrer name="operator++(Float:)"/>
+			<referrer name="LoadRadares"/>
 			<param name="oper1">
 				<paraminfo>Float </paraminfo>
 			</param>
 			<param name="oper2">
 				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
+		<member name="M:Float:operator=(_:)" syntax="Float:operator=(_:)(oper)">
+			<tagname value="Float"/>
+			<attribute name="native"/>
+			<referrer name="CheckProfs"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="CheckRadar"/>
+			<param name="oper">
 			</param>
 		</member>
 		<member name="M:operator==(Float:,Float:)" syntax="operator==(Float:,Float:)(oper1, oper2)">
@@ -446,6 +940,7 @@
 		<member name="M:operator==(Float:,_:)" syntax="operator==(Float:,_:)(oper1, oper2)">
 			<tagname value="bool"/>
 			<stacksize value="4"/>
+			<referrer name="OnPlayerSpawn"/>
 			<dependency name="float"/>
 			<dependency name="floatcmp"/>
 			<param name="oper1">
@@ -523,6 +1018,7 @@
 		<member name="M:operator&lt;(Float:,Float:)" syntax="operator&lt;(Float:,Float:)(oper1, oper2)">
 			<tagname value="bool"/>
 			<stacksize value="4"/>
+			<referrer name="OnPlayerSpawn"/>
 			<dependency name="floatcmp"/>
 			<param name="oper1">
 				<paraminfo>Float </paraminfo>
@@ -610,6 +1106,7 @@
 		</member>
 		<member name="M:AddStaticVehicle" syntax="AddStaticVehicle(modelid, spawn_x, spawn_y, spawn_z, z_angle, color1, color2)">
 			<attribute name="native"/>
+			<referrer name="CheckProfs"/>
 			<referrer name="cmd_m"/>
 			<param name="modelid">
 			</param>
@@ -628,6 +1125,49 @@
 			<param name="color1">
 			</param>
 			<param name="color2">
+			</param>
+		</member>
+		<member name="M:ApplyActorAnimation" syntax="ApplyActorAnimation(actorid, animlib[], animname[], fDelta, loop, lockx, locky, freeze, time)">
+			<attribute name="native"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
+			<param name="actorid">
+			</param>
+			<param name="animlib">
+				<paraminfo> [] </paraminfo>
+			</param>
+			<param name="animname">
+				<paraminfo> [] </paraminfo>
+			</param>
+			<param name="fDelta">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="loop">
+			</param>
+			<param name="lockx">
+			</param>
+			<param name="locky">
+			</param>
+			<param name="freeze">
+			</param>
+			<param name="time">
+			</param>
+		</member>
+		<member name="M:Attach3DTextLabelToVehicle" syntax="Attach3DTextLabelToVehicle(id, vehicleid, OffsetX, OffsetY, OffsetZ)">
+			<attribute name="native"/>
+			<referrer name="CheckProfs"/>
+			<param name="id">
+				<paraminfo>Text3D </paraminfo>
+			</param>
+			<param name="vehicleid">
+			</param>
+			<param name="OffsetX">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="OffsetY">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="OffsetZ">
+				<paraminfo>Float </paraminfo>
 			</param>
 		</member>
 		<member name="M:CallLocalFunction" syntax="CallLocalFunction(function[], format[], ...)">
@@ -663,11 +1203,211 @@
 			<param name="playerid">
 			</param>
 		</member>
+		<member name="M:CheckCasas" syntax="CheckCasas(playerid)">
+			<attribute name="public"/>
+			<stacksize value="268"/>
+			<dependency name="DOF2_GetFloat"/>
+			<dependency name="DOF2_GetInt"/>
+			<dependency name="DOF2_GetString"/>
+			<dependency name="GetPlayerKeys"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="KillTimer"/>
+			<dependency name="PlayerName"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerInterior"/>
+			<dependency name="SetPlayerPos"/>
+			<dependency name="SetPlayerVirtualWorld"/>
+			<dependency name="SetTimer"/>
+			<dependency name="false"/>
+			<dependency name="format"/>
+			<dependency name="lastx"/>
+			<dependency name="lasty"/>
+			<dependency name="lastz"/>
+			<dependency name="strcmp"/>
+			<dependency name="timerSaida"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:CheckOrgs" syntax="CheckOrgs(playerid)">
+			<attribute name="public"/>
+			<stacksize value="30400"/>
+			<dependency name="DOF2_GetFloat"/>
+			<dependency name="DOF2_GetInt"/>
+			<dependency name="DOF2_SetInt"/>
+			<dependency name="GetPlayerInterior"/>
+			<dependency name="GetPlayerKeys"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="KillTimer"/>
+			<dependency name="PlayerName"/>
+			<dependency name="SetPlayerInterior"/>
+			<dependency name="SetPlayerPos"/>
+			<dependency name="SetTimer"/>
+			<dependency name="false"/>
+			<dependency name="format"/>
+			<dependency name="inpref"/>
+			<dependency name="lastx"/>
+			<dependency name="lasty"/>
+			<dependency name="lastz"/>
+			<dependency name="timerSaida"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:CheckPref" syntax="CheckPref(playerid)">
+			<attribute name="public"/>
+			<stacksize value="1268"/>
+			<dependency name="DOF2_GetInt"/>
+			<dependency name="GetPlayerKeys"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="PlayerName"/>
+			<dependency name="ShowPlayerDialog"/>
+			<dependency name="format"/>
+			<dependency name="multas"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:CheckProfs" syntax="CheckProfs(playerid)">
+			<attribute name="public"/>
+			<stacksize value="269"/>
+			<dependency name="Float:operator=(_:)"/>
+			<dependency name="AddStaticVehicle"/>
+			<dependency name="Attach3DTextLabelToVehicle"/>
+			<dependency name="Create3DTextLabel"/>
+			<dependency name="DOF2_GetString"/>
+			<dependency name="DestroyVehicle"/>
+			<dependency name="GetPlayerKeys"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="PlayerName"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="bike1"/>
+			<dependency name="bike2"/>
+			<dependency name="bikeT"/>
+			<dependency name="false"/>
+			<dependency name="format"/>
+			<dependency name="strcmp"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:CheckRadar" syntax="CheckRadar(playerid)">
+			<attribute name="public"/>
+			<stacksize value="1657"/>
+			<dependency name="operator*(Float:,_:)"/>
+			<dependency name="Float:operator=(_:)"/>
+			<dependency name="DOF2_GetInt"/>
+			<dependency name="DOF2_SetInt"/>
+			<dependency name="GetPlayerVehicleID"/>
+			<dependency name="GetVehicleVelocity"/>
+			<dependency name="InfoRadar"/>
+			<dependency name="InfoRadar"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="PlayerName"/>
+			<dependency name="PlayerName"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="Variavel"/>
+			<dependency name="floatadd"/>
+			<dependency name="floatmul"/>
+			<dependency name="floatpower"/>
+			<dependency name="floatround"/>
+			<dependency name="floatsqroot"/>
+			<dependency name="format"/>
+			<dependency name="gettime"/>
+			<dependency name="lPosX"/>
+			<dependency name="lPosY"/>
+			<dependency name="lPosZ"/>
+			<dependency name="lVelocidade"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:CheckSaidas" syntax="CheckSaidas(playerid)">
+			<attribute name="public"/>
+			<stacksize value="400"/>
+			<dependency name="DOF2_GetFloat"/>
+			<dependency name="DOF2_GetInt"/>
+			<dependency name="DOF2_SetInt"/>
+			<dependency name="GetPlayerInterior"/>
+			<dependency name="GetPlayerKeys"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="KillTimer"/>
+			<dependency name="SetPlayerInterior"/>
+			<dependency name="SetPlayerPos"/>
+			<dependency name="SetTimer"/>
+			<dependency name="false"/>
+			<dependency name="format"/>
+			<dependency name="inpref"/>
+			<dependency name="lastx"/>
+			<dependency name="lasty"/>
+			<dependency name="lastz"/>
+			<dependency name="timerOrgs"/>
+			<dependency name="tmrCasas"/>
+			<param name="playerid">
+			</param>
+		</member>
 		<member name="M:ClearPlayerChat" syntax="ClearPlayerChat(playerid)">
 			<stacksize value="5"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
 			<dependency name="SendClientMessage"/>
 			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:Create3DTextLabel" syntax="Create3DTextLabel(text[], color, X, Y, Z, DrawDistance, virtualworld, testLOS)">
+			<tagname value="Text3D"/>
+			<attribute name="native"/>
+			<referrer name="LoadRadares"/>
+			<referrer name="CheckProfs"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
+			<referrer name="cmd_createhotel"/>
+			<referrer name="cmd_createpizza"/>
+			<referrer name="cmd_createlanche"/>
+			<referrer name="cmd_createsaida"/>
+			<referrer name="cmd_createdp"/>
+			<referrer name="cmd_createprefeitura"/>
+			<referrer name="cmd_createae"/>
+			<referrer name="cmd_createdetran"/>
+			<referrer name="cmd_createauto"/>
+			<referrer name="cmd_createbank"/>
+			<referrer name="cmd_createcasa"/>
+			<referrer name="cmd_createemp"/>
+			<param name="text">
+				<paraminfo> [] </paraminfo>
+			</param>
+			<param name="color">
+			</param>
+			<param name="X">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="Y">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="Z">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="DrawDistance">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="virtualworld">
+			</param>
+			<param name="testLOS">
+			</param>
+		</member>
+		<member name="M:CreateActor" syntax="CreateActor(modelid, X, Y, Z, Rotation)">
+			<attribute name="native"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
+			<param name="modelid">
+			</param>
+			<param name="X">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="Y">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="Z">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="Rotation">
+				<paraminfo>Float </paraminfo>
 			</param>
 		</member>
 		<member name="M:CreateClock" syntax="CreateClock(playerid)">
@@ -716,6 +1456,65 @@
 			<param name="playerid">
 			</param>
 		</member>
+		<member name="M:CreateObject" syntax="CreateObject(modelid, X, Y, Z, rX, rY, rZ, DrawDistance)">
+			<attribute name="native"/>
+			<referrer name="LoadRadares"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
+			<param name="modelid">
+			</param>
+			<param name="X">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="Y">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="Z">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="rX">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="rY">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="rZ">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="DrawDistance">
+				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
+		<member name="M:CreatePickup" syntax="CreatePickup(model, type, X, Y, Z, virtualworld)">
+			<attribute name="native"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
+			<referrer name="cmd_createhotel"/>
+			<referrer name="cmd_createpizza"/>
+			<referrer name="cmd_createlanche"/>
+			<referrer name="cmd_createsaida"/>
+			<referrer name="cmd_createdp"/>
+			<referrer name="cmd_createprefeitura"/>
+			<referrer name="cmd_createae"/>
+			<referrer name="cmd_createdetran"/>
+			<referrer name="cmd_createauto"/>
+			<referrer name="cmd_createbank"/>
+			<referrer name="cmd_createcasa"/>
+			<referrer name="cmd_createemp"/>
+			<param name="model">
+			</param>
+			<param name="type">
+			</param>
+			<param name="X">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="Y">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="Z">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="virtualworld">
+			</param>
+		</member>
 		<member name="M:CreatePlayerTextDraw" syntax="CreatePlayerTextDraw(playerid, x, y, text[])">
 			<tagname value="PlayerText"/>
 			<attribute name="native"/>
@@ -731,6 +1530,32 @@
 			</param>
 			<param name="text">
 				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:CreateVehicle" syntax="CreateVehicle(vehicletype, x, y, z, rotation, color1, color2, respawn_delay, addsiren)">
+			<attribute name="native"/>
+			<referrer name="OnDialogResponse"/>
+			<param name="vehicletype">
+			</param>
+			<param name="x">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="y">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="z">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="rotation">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="color1">
+			</param>
+			<param name="color2">
+			</param>
+			<param name="respawn_delay">
+			</param>
+			<param name="addsiren">
 			</param>
 		</member>
 		<member name="M:DOF2_CheckLogin" syntax="DOF2_CheckLogin(file[], password[])">
@@ -766,6 +1591,18 @@
 		<member name="M:DOF2_CreateFile" syntax="DOF2_CreateFile(file[], password[])">
 			<stacksize value="7"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
+			<referrer name="cmd_createhotel"/>
+			<referrer name="cmd_createpizza"/>
+			<referrer name="cmd_createlanche"/>
+			<referrer name="cmd_createsaida"/>
+			<referrer name="cmd_createdp"/>
+			<referrer name="cmd_createprefeitura"/>
+			<referrer name="cmd_createae"/>
+			<referrer name="cmd_createdetran"/>
+			<referrer name="cmd_createauto"/>
+			<referrer name="cmd_createbank"/>
+			<referrer name="cmd_createcasa"/>
+			<referrer name="cmd_createemp"/>
 			<dependency name="DOF2_SetInt"/>
 			<dependency name="DOF2_num_hash"/>
 			<dependency name="fclose"/>
@@ -837,6 +1674,12 @@
 		<member name="M:DOF2_GetFloat" syntax="DOF2_GetFloat(file[], key[], tag[])">
 			<tagname value="Float"/>
 			<stacksize value="40"/>
+			<referrer name="LoadRadares"/>
+			<referrer name="CheckOrgs"/>
+			<referrer name="CheckSaidas"/>
+			<referrer name="CheckCasas"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
+			<referrer name="SSCANF_OnPlayerConnect"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
 			<dependency name="DOF2_GetStringEx"/>
 			<dependency name="floatstr"/>
@@ -867,7 +1710,21 @@
 		<member name="M:DOF2_GetInt" syntax="DOF2_GetInt(file[], key[], tag[])">
 			<stacksize value="24"/>
 			<referrer name="DOF2_CheckLogin"/>
+			<referrer name="LoadRadares"/>
+			<referrer name="CheckPref"/>
+			<referrer name="CheckOrgs"/>
+			<referrer name="CheckSaidas"/>
+			<referrer name="CheckCasas"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
+			<referrer name="SSCANF_OnPlayerConnect"/>
+			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
+			<referrer name="OnDialogResponse"/>
+			<referrer name="OnPlayerEnterVehicle"/>
+			<referrer name="CheckRadar"/>
+			<referrer name="OnPlayerUpdate"/>
+			<referrer name="cmd_createcasa"/>
+			<referrer name="cmd_createemp"/>
 			<dependency name="DOF2_GetStringEx"/>
 			<dependency name="strval"/>
 			<param name="file">
@@ -882,7 +1739,13 @@
 		</member>
 		<member name="M:DOF2_GetString" syntax="DOF2_GetString(file[], key[], tag[])">
 			<stacksize value="136"/>
+			<referrer name="CheckCasas"/>
+			<referrer name="CheckProfs"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
+			<referrer name="OnDialogResponse"/>
+			<referrer name="cmd_pegarjornal"/>
+			<referrer name="cmd_pegarpizza"/>
 			<dependency name="DOF2_GetString"/>
 			<dependency name="DOF2_GetStringEx"/>
 			<param name="file">
@@ -1272,6 +2135,18 @@
 			<stacksize value="39"/>
 			<referrer name="SalvarConta"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
+			<referrer name="cmd_createhotel"/>
+			<referrer name="cmd_createpizza"/>
+			<referrer name="cmd_createlanche"/>
+			<referrer name="cmd_createsaida"/>
+			<referrer name="cmd_createdp"/>
+			<referrer name="cmd_createprefeitura"/>
+			<referrer name="cmd_createae"/>
+			<referrer name="cmd_createdetran"/>
+			<referrer name="cmd_createauto"/>
+			<referrer name="cmd_createbank"/>
+			<referrer name="cmd_createcasa"/>
+			<referrer name="cmd_createemp"/>
 			<dependency name="DOF2_SetString"/>
 			<dependency name="format"/>
 			<param name="file">
@@ -1307,7 +2182,26 @@
 			<stacksize value="23"/>
 			<referrer name="DOF2_CreateFile"/>
 			<referrer name="SalvarConta"/>
+			<referrer name="CheckOrgs"/>
+			<referrer name="CheckSaidas"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
+			<referrer name="OnDialogResponse"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="CheckRadar"/>
+			<referrer name="OnPlayerUpdate"/>
+			<referrer name="cmd_createhotel"/>
+			<referrer name="cmd_createpizza"/>
+			<referrer name="cmd_createlanche"/>
+			<referrer name="cmd_createsaida"/>
+			<referrer name="cmd_createdp"/>
+			<referrer name="cmd_createprefeitura"/>
+			<referrer name="cmd_createae"/>
+			<referrer name="cmd_createdetran"/>
+			<referrer name="cmd_createauto"/>
+			<referrer name="cmd_createbank"/>
+			<referrer name="cmd_sethab"/>
+			<referrer name="cmd_createcasa"/>
+			<referrer name="cmd_createemp"/>
 			<dependency name="DOF2_SetString"/>
 			<dependency name="format"/>
 			<param name="file">
@@ -1330,6 +2224,9 @@
 			<referrer name="DOF2_SetFloat"/>
 			<referrer name="DOF2_SetBool"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
+			<referrer name="OnDialogResponse"/>
+			<referrer name="cmd_createcasa"/>
+			<referrer name="cmd_createemp"/>
 			<dependency name="CaseSensitive"/>
 			<dependency name="CurrentFile"/>
 			<dependency name="DOF2_HashKey"/>
@@ -1539,6 +2436,21 @@
 			<referrer name="DOF2_ParseFile"/>
 			<referrer name="SalvarConta"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
+			<referrer name="OnDialogResponse"/>
+			<referrer name="OnPlayerExitVehicle"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="cmd_createhotel"/>
+			<referrer name="cmd_createpizza"/>
+			<referrer name="cmd_createlanche"/>
+			<referrer name="cmd_createsaida"/>
+			<referrer name="cmd_createdp"/>
+			<referrer name="cmd_createprefeitura"/>
+			<referrer name="cmd_createae"/>
+			<referrer name="cmd_createdetran"/>
+			<referrer name="cmd_createauto"/>
+			<referrer name="cmd_createbank"/>
+			<referrer name="cmd_createcasa"/>
+			<referrer name="cmd_createemp"/>
 			<dependency name="CurrentFile"/>
 			<dependency name="Entries_Line"/>
 			<dependency name="Entries_NextEntry"/>
@@ -1667,6 +2579,13 @@
 				<paraminfo> [] </paraminfo>
 			</param>
 		</member>
+		<member name="M:Delete3DTextLabel" syntax="Delete3DTextLabel(id)">
+			<attribute name="native"/>
+			<referrer name="OnVehicleDeath"/>
+			<param name="id">
+				<paraminfo>Text3D </paraminfo>
+			</param>
+		</member>
 		<member name="M:DestroyInicial" syntax="DestroyInicial(playerid)">
 			<stacksize value="4"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
@@ -1675,9 +2594,31 @@
 			<param name="playerid">
 			</param>
 		</member>
+		<member name="M:DestroyVehicle" syntax="DestroyVehicle(vehicleid)">
+			<attribute name="native"/>
+			<referrer name="CheckProfs"/>
+			<referrer name="OnVehicleDeath"/>
+			<param name="vehicleid">
+			</param>
+		</member>
 		<member name="M:DisableInteriorEnterExits" syntax="DisableInteriorEnterExits()">
 			<attribute name="native"/>
 			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="M:DisablePlayerCheckpoint" syntax="DisablePlayerCheckpoint(playerid)">
+			<attribute name="native"/>
+			<referrer name="cmd_pegarpizza"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:DisablePlayerRaceCheckpoint" syntax="DisablePlayerRaceCheckpoint(playerid)">
+			<attribute name="native"/>
+			<referrer name="OnPlayerExitVehicle"/>
+			<referrer name="OnVehicleDeath"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="OnPlayerDeath"/>
+			<param name="playerid">
+			</param>
 		</member>
 		<member name="M:EnableStuntBonusForAll" syntax="EnableStuntBonusForAll(enable)">
 			<attribute name="native"/>
@@ -1690,6 +2631,31 @@
 			<referrer name="OnFilterScriptInit"/>
 			<referrer name="zcmd_OnGameModeInit"/>
 		</member>
+		<member name="M:GetPlayerDistanceFromPoint" syntax="GetPlayerDistanceFromPoint(playerid, X, Y, Z)">
+			<tagname value="Float"/>
+			<attribute name="native"/>
+			<referrer name="OnPlayerDeath"/>
+			<param name="playerid">
+			</param>
+			<param name="X">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="Y">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="Z">
+				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
+		<member name="M:GetPlayerFacingAngle" syntax="GetPlayerFacingAngle(playerid, &amp;ang)">
+			<attribute name="native"/>
+			<referrer name="cmd_ppos"/>
+			<param name="playerid">
+			</param>
+			<param name="ang">
+				<paraminfo>Float &amp; </paraminfo>
+			</param>
+		</member>
 		<member name="M:GetPlayerHealth" syntax="GetPlayerHealth(playerid, &amp;health)">
 			<attribute name="native"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
@@ -1699,9 +2665,38 @@
 				<paraminfo>Float &amp; </paraminfo>
 			</param>
 		</member>
+		<member name="M:GetPlayerInterior" syntax="GetPlayerInterior(playerid)">
+			<attribute name="native"/>
+			<referrer name="CheckOrgs"/>
+			<referrer name="CheckSaidas"/>
+			<referrer name="cmd_ppos"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:GetPlayerKeys" syntax="GetPlayerKeys(playerid, &amp;keys, &amp;updown, &amp;leftright)">
+			<attribute name="native"/>
+			<referrer name="CheckPref"/>
+			<referrer name="CheckOrgs"/>
+			<referrer name="CheckSaidas"/>
+			<referrer name="CheckCasas"/>
+			<referrer name="CheckProfs"/>
+			<param name="playerid">
+			</param>
+			<param name="keys">
+				<paraminfo> &amp; </paraminfo>
+			</param>
+			<param name="updown">
+				<paraminfo> &amp; </paraminfo>
+			</param>
+			<param name="leftright">
+				<paraminfo> &amp; </paraminfo>
+			</param>
+		</member>
 		<member name="M:GetPlayerMoney" syntax="GetPlayerMoney(playerid)">
 			<attribute name="native"/>
 			<referrer name="SalvarConta"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnDialogResponse"/>
 			<param name="playerid">
 			</param>
 		</member>
@@ -1720,7 +2715,24 @@
 		<member name="M:GetPlayerPos" syntax="GetPlayerPos(playerid, &amp;x, &amp;y, &amp;z)">
 			<attribute name="native"/>
 			<referrer name="SalvarConta"/>
+			<referrer name="CheckOrgs"/>
+			<referrer name="CheckCasas"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnDialogResponse"/>
 			<referrer name="cmd_m"/>
+			<referrer name="cmd_createhotel"/>
+			<referrer name="cmd_createpizza"/>
+			<referrer name="cmd_createlanche"/>
+			<referrer name="cmd_createsaida"/>
+			<referrer name="cmd_ppos"/>
+			<referrer name="cmd_createdp"/>
+			<referrer name="cmd_createprefeitura"/>
+			<referrer name="cmd_createae"/>
+			<referrer name="cmd_createdetran"/>
+			<referrer name="cmd_createauto"/>
+			<referrer name="cmd_createbank"/>
+			<referrer name="cmd_createcasa"/>
+			<referrer name="cmd_createemp"/>
 			<param name="playerid">
 			</param>
 			<param name="x">
@@ -1736,13 +2748,24 @@
 		<member name="M:GetPlayerScore" syntax="GetPlayerScore(playerid)">
 			<attribute name="native"/>
 			<referrer name="SalvarConta"/>
+			<referrer name="OnDialogResponse"/>
 			<param name="playerid">
 			</param>
 		</member>
 		<member name="M:GetPlayerSkin" syntax="GetPlayerSkin(playerid)">
 			<attribute name="native"/>
 			<referrer name="SalvarConta"/>
+			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:GetPlayerVehicleID" syntax="GetPlayerVehicleID(playerid)">
+			<attribute name="native"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="CheckRadar"/>
+			<referrer name="cmd_pegarjornal"/>
+			<referrer name="cmd_pegarpizza"/>
 			<param name="playerid">
 			</param>
 		</member>
@@ -1750,9 +2773,27 @@
 			<attribute name="native"/>
 			<referrer name="DOF2_MakeBackup"/>
 		</member>
+		<member name="M:GetVehicleVelocity" syntax="GetVehicleVelocity(vehicleid, &amp;X, &amp;Y, &amp;Z)">
+			<attribute name="native"/>
+			<referrer name="CheckRadar"/>
+			<param name="vehicleid">
+			</param>
+			<param name="X">
+				<paraminfo>Float &amp; </paraminfo>
+			</param>
+			<param name="Y">
+				<paraminfo>Float &amp; </paraminfo>
+			</param>
+			<param name="Z">
+				<paraminfo>Float &amp; </paraminfo>
+			</param>
+		</member>
 		<member name="M:GivePlayerMoney" syntax="GivePlayerMoney(playerid, money)">
 			<attribute name="native"/>
+			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
+			<referrer name="OnDialogResponse"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
 			<param name="playerid">
 			</param>
 			<param name="money">
@@ -1760,7 +2801,7 @@
 		</member>
 		<member name="M:InterpolateCameraLookAt" syntax="InterpolateCameraLookAt(playerid, FromX, FromY, FromZ, ToX, ToY, ToZ, time, cut)">
 			<attribute name="native"/>
-			<referrer name="SSCANF_OnPlayerConnect"/>
+			<referrer name="start"/>
 			<param name="playerid">
 			</param>
 			<param name="FromX">
@@ -1788,7 +2829,7 @@
 		</member>
 		<member name="M:InterpolateCameraPos" syntax="InterpolateCameraPos(playerid, FromX, FromY, FromZ, ToX, ToY, ToZ, time, cut)">
 			<attribute name="native"/>
-			<referrer name="SSCANF_OnPlayerConnect"/>
+			<referrer name="start"/>
 			<param name="playerid">
 			</param>
 			<param name="FromX">
@@ -1814,20 +2855,96 @@
 			<param name="cut">
 			</param>
 		</member>
+		<member name="M:IsPlayerInRangeOfPoint" syntax="IsPlayerInRangeOfPoint(playerid, range, x, y, z)">
+			<attribute name="native"/>
+			<referrer name="CheckPref"/>
+			<referrer name="CheckOrgs"/>
+			<referrer name="CheckSaidas"/>
+			<referrer name="CheckCasas"/>
+			<referrer name="CheckProfs"/>
+			<referrer name="CheckRadar"/>
+			<referrer name="cmd_pegarjornal"/>
+			<referrer name="cmd_pegarpizza"/>
+			<param name="playerid">
+			</param>
+			<param name="range">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="x">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="y">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="z">
+				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
 		<member name="M:IsPlayerNPC" syntax="IsPlayerNPC(playerid)">
 			<attribute name="native"/>
 			<referrer name="OnPlayerConnect"/>
 			<referrer name="SSCANF_OnPlayerConnect"/>
 			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnPlayerRequestSpawn"/>
+			<referrer name="OnPlayerEnterVehicle"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:KP" syntax="KP(playerid)">
+			<attribute name="public"/>
+			<stacksize value="3"/>
+			<dependency name="Kick"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:Kick" syntax="Kick(playerid)">
+			<attribute name="native"/>
+			<referrer name="KP"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:KickPlayer" syntax="KickPlayer(playerid)">
+			<attribute name="public"/>
+			<stacksize value="5"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetTimer"/>
+			<dependency name="false"/>
 			<param name="playerid">
 			</param>
 		</member>
 		<member name="M:KillTimer" syntax="KillTimer(timerid)">
 			<attribute name="native"/>
+			<referrer name="CheckOrgs"/>
+			<referrer name="CheckSaidas"/>
+			<referrer name="CheckCasas"/>
 			<referrer name="SSCANF_OnPlayerDisconnect"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnPlayerClickPlayerTextDraw"/>
 			<param name="timerid">
 			</param>
+		</member>
+		<member name="M:LoadRadares" syntax="LoadRadares()">
+			<attribute name="public"/>
+			<stacksize value="2640"/>
+			<referrer name="main"/>
+			<dependency name="operator+(Float:,Float:)"/>
+			<dependency name="Create3DTextLabel"/>
+			<dependency name="CreateObject"/>
+			<dependency name="DOF2_GetFloat"/>
+			<dependency name="DOF2_GetInt"/>
+			<dependency name="InfoRadar"/>
+			<dependency name="InfoRadar"/>
+			<dependency name="RadarID"/>
+			<dependency name="TRadar"/>
+			<dependency name="fexist"/>
+			<dependency name="format"/>
+			<dependency name="idDoRadar"/>
+			<dependency name="lAngulo"/>
+			<dependency name="lPosX"/>
+			<dependency name="lPosY"/>
+			<dependency name="lPosZ"/>
+			<dependency name="lVelocidade"/>
+			<dependency name="printf"/>
 		</member>
 		<member name="M:OnActorStreamIn" syntax="OnActorStreamIn(actorid, forplayerid)">
 			<stacksize value="1"/>
@@ -1845,18 +2962,50 @@
 		</member>
 		<member name="M:OnDialogResponse" syntax="OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])">
 			<attribute name="public"/>
-			<stacksize value="137"/>
+			<stacksize value="1265"/>
+			<dependency name="CreateVehicle"/>
+			<dependency name="DOF2_GetInt"/>
+			<dependency name="DOF2_GetString"/>
+			<dependency name="DOF2_SetInt"/>
+			<dependency name="DOF2_SetString"/>
+			<dependency name="DOF2_WriteFile"/>
+			<dependency name="GetPlayerMoney"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="GetPlayerScore"/>
+			<dependency name="GivePlayerMoney"/>
 			<dependency name="PlayerName"/>
 			<dependency name="PlayerTD"/>
 			<dependency name="PlayerTextDrawHide"/>
 			<dependency name="PlayerTextDrawSetString"/>
 			<dependency name="PlayerTextDrawShow"/>
+			<dependency name="PutPlayerInVehicle"/>
+			<dependency name="RemovePlayerMapIcon"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerInterior"/>
+			<dependency name="SetPlayerMapIcon"/>
+			<dependency name="SetPlayerRaceCheckpoint"/>
+			<dependency name="SetTimer"/>
 			<dependency name="ShowPlayerDialog"/>
+			<dependency name="aereo"/>
+			<dependency name="aquatico"/>
+			<dependency name="autoescola"/>
+			<dependency name="bankmoney"/>
 			<dependency name="confsenha"/>
+			<dependency name="cp"/>
+			<dependency name="cpaereo"/>
+			<dependency name="false"/>
 			<dependency name="format"/>
+			<dependency name="lx"/>
+			<dependency name="ly"/>
+			<dependency name="lz"/>
+			<dependency name="multas"/>
 			<dependency name="senha"/>
 			<dependency name="senhalogin"/>
+			<dependency name="sscanf"/>
+			<dependency name="strcat"/>
+			<dependency name="strcmp"/>
 			<dependency name="strlen"/>
+			<dependency name="true"/>
 			<param name="playerid">
 			</param>
 			<param name="dialogid">
@@ -1957,6 +3106,7 @@
 			<dependency name="GetPlayerHealth"/>
 			<dependency name="GetPlayerSkin"/>
 			<dependency name="GivePlayerMoney"/>
+			<dependency name="KillTimer"/>
 			<dependency name="Logado"/>
 			<dependency name="PlayerName"/>
 			<dependency name="PlayerTD"/>
@@ -1976,6 +3126,7 @@
 			<dependency name="senhalogin"/>
 			<dependency name="strcmp"/>
 			<dependency name="strlen"/>
+			<dependency name="tmrKick"/>
 			<dependency name="tmrclock"/>
 			<dependency name="true"/>
 			<param name="playerid">
@@ -2034,7 +3185,29 @@
 			</param>
 		</member>
 		<member name="M:OnPlayerDeath" syntax="OnPlayerDeath(playerid, killerid, reason)">
-			<stacksize value="1"/>
+			<attribute name="public"/>
+			<stacksize value="6"/>
+			<dependency name="DisablePlayerRaceCheckpoint"/>
+			<dependency name="GetPlayerDistanceFromPoint"/>
+			<dependency name="JornalT"/>
+			<dependency name="PizzaT"/>
+			<dependency name="Pizzas"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="aereo"/>
+			<dependency name="aquatico"/>
+			<dependency name="autoescola"/>
+			<dependency name="cp"/>
+			<dependency name="cpaereo"/>
+			<dependency name="cpagua"/>
+			<dependency name="death"/>
+			<dependency name="false"/>
+			<dependency name="h1"/>
+			<dependency name="h2"/>
+			<dependency name="h3"/>
+			<dependency name="h4"/>
+			<dependency name="h5"/>
+			<dependency name="jornais"/>
+			<dependency name="true"/>
 			<param name="playerid">
 			</param>
 			<param name="killerid">
@@ -2126,12 +3299,61 @@
 			</param>
 		</member>
 		<member name="M:OnPlayerEnterRaceCheckpoint" syntax="OnPlayerEnterRaceCheckpoint(playerid)">
-			<stacksize value="1"/>
+			<attribute name="public"/>
+			<stacksize value="391"/>
+			<dependency name="Float:operator=(_:)"/>
+			<dependency name="DOF2_SetInt"/>
+			<dependency name="DOF2_WriteFile"/>
+			<dependency name="DisablePlayerRaceCheckpoint"/>
+			<dependency name="GetPlayerVehicleID"/>
+			<dependency name="GivePlayerMoney"/>
+			<dependency name="JornalT"/>
+			<dependency name="Pbike"/>
+			<dependency name="PizzaT"/>
+			<dependency name="Pizzas"/>
+			<dependency name="PlayerName"/>
+			<dependency name="PlayerName"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerInterior"/>
+			<dependency name="SetPlayerPos"/>
+			<dependency name="SetPlayerRaceCheckpoint"/>
+			<dependency name="aereo"/>
+			<dependency name="aquatico"/>
+			<dependency name="autoescola"/>
+			<dependency name="bike1"/>
+			<dependency name="casas"/>
+			<dependency name="casax"/>
+			<dependency name="casay"/>
+			<dependency name="casaz"/>
+			<dependency name="cp"/>
+			<dependency name="cpaereo"/>
+			<dependency name="cpagua"/>
+			<dependency name="false"/>
+			<dependency name="format"/>
+			<dependency name="jornais"/>
+			<dependency name="lx"/>
+			<dependency name="ly"/>
+			<dependency name="lz"/>
+			<dependency name="nextx"/>
+			<dependency name="nexty"/>
+			<dependency name="nextz"/>
+			<dependency name="random2"/>
 			<param name="playerid">
 			</param>
 		</member>
 		<member name="M:OnPlayerEnterVehicle" syntax="OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)">
-			<stacksize value="1"/>
+			<attribute name="public"/>
+			<stacksize value="160"/>
+			<dependency name="DOF2_GetInt"/>
+			<dependency name="IsPlayerNPC"/>
+			<dependency name="PlayerName"/>
+			<dependency name="PlayerName"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="TogglePlayerControllable"/>
+			<dependency name="false"/>
+			<dependency name="format"/>
+			<dependency name="onvehicle"/>
+			<dependency name="true"/>
 			<param name="playerid">
 			</param>
 			<param name="vehicleid">
@@ -2140,7 +3362,25 @@
 			</param>
 		</member>
 		<member name="M:OnPlayerExitVehicle" syntax="OnPlayerExitVehicle(playerid, vehicleid)">
-			<stacksize value="1"/>
+			<attribute name="public"/>
+			<stacksize value="160"/>
+			<dependency name="DOF2_WriteFile"/>
+			<dependency name="DisablePlayerRaceCheckpoint"/>
+			<dependency name="PlayerName"/>
+			<dependency name="PlayerName"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerPos"/>
+			<dependency name="aereo"/>
+			<dependency name="aquatico"/>
+			<dependency name="autoescola"/>
+			<dependency name="cp"/>
+			<dependency name="cpaereo"/>
+			<dependency name="cpagua"/>
+			<dependency name="false"/>
+			<dependency name="format"/>
+			<dependency name="lx"/>
+			<dependency name="ly"/>
+			<dependency name="lz"/>
 			<param name="playerid">
 			</param>
 			<param name="vehicleid">
@@ -2281,8 +3521,31 @@
 		</member>
 		<member name="M:OnPlayerSpawn" syntax="OnPlayerSpawn(playerid)">
 			<attribute name="public"/>
-			<stacksize value="3"/>
+			<stacksize value="3134"/>
+			<dependency name="operator==(Float:,_:)"/>
+			<dependency name="operator&lt;(Float:,Float:)"/>
+			<dependency name="DOF2_GetInt"/>
+			<dependency name="GetPlayerMoney"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="GetPlayerSkin"/>
+			<dependency name="GivePlayerMoney"/>
 			<dependency name="IsPlayerNPC"/>
+			<dependency name="KillTimer"/>
+			<dependency name="PlayerName"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerInterior"/>
+			<dependency name="SetPlayerPos"/>
+			<dependency name="SetPlayerSkin"/>
+			<dependency name="bankmoney"/>
+			<dependency name="death"/>
+			<dependency name="false"/>
+			<dependency name="format"/>
+			<dependency name="h1"/>
+			<dependency name="h2"/>
+			<dependency name="h3"/>
+			<dependency name="h4"/>
+			<dependency name="h5"/>
+			<dependency name="tmrKick"/>
 			<param name="playerid">
 			</param>
 		</member>
@@ -2332,7 +3595,14 @@
 			</param>
 		</member>
 		<member name="M:OnPlayerUpdate" syntax="OnPlayerUpdate(playerid)">
-			<stacksize value="1"/>
+			<attribute name="public"/>
+			<stacksize value="160"/>
+			<dependency name="DOF2_GetInt"/>
+			<dependency name="DOF2_SetInt"/>
+			<dependency name="PlayerName"/>
+			<dependency name="PlayerName"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
 			<param name="playerid">
 			</param>
 		</member>
@@ -2415,7 +3685,21 @@
 			</param>
 		</member>
 		<member name="M:OnVehicleDeath" syntax="OnVehicleDeath(vehicleid, killerid)">
-			<stacksize value="1"/>
+			<attribute name="public"/>
+			<stacksize value="5"/>
+			<dependency name="Delete3DTextLabel"/>
+			<dependency name="DestroyVehicle"/>
+			<dependency name="DisablePlayerRaceCheckpoint"/>
+			<dependency name="JornalT"/>
+			<dependency name="Pbike"/>
+			<dependency name="PbikeT"/>
+			<dependency name="PizzaT"/>
+			<dependency name="Pizzas"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="bike1"/>
+			<dependency name="bike2"/>
+			<dependency name="false"/>
+			<dependency name="jornais"/>
 			<param name="vehicleid">
 			</param>
 			<param name="killerid">
@@ -2481,11 +3765,26 @@
 		<member name="M:PlayerName" syntax="PlayerName(playerid)">
 			<stacksize value="29"/>
 			<referrer name="start"/>
+			<referrer name="CheckPref"/>
 			<referrer name="CreateInicial"/>
 			<referrer name="SalvarConta"/>
+			<referrer name="CheckOrgs"/>
+			<referrer name="CheckCasas"/>
+			<referrer name="CheckProfs"/>
 			<referrer name="SSCANF_OnPlayerConnect"/>
+			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
 			<referrer name="OnDialogResponse"/>
+			<referrer name="OnPlayerExitVehicle"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="OnPlayerEnterVehicle"/>
+			<referrer name="CheckRadar"/>
+			<referrer name="OnPlayerUpdate"/>
+			<referrer name="cmd_pegarjornal"/>
+			<referrer name="cmd_pegarpizza"/>
+			<referrer name="cmd_sethab"/>
+			<referrer name="cmd_createcasa"/>
+			<referrer name="cmd_createemp"/>
 			<dependency name="GetPlayerName"/>
 			<dependency name="PlayerName"/>
 			<param name="playerid">
@@ -2686,6 +3985,24 @@
 			<param name="use">
 			</param>
 		</member>
+		<member name="M:PutPlayerInVehicle" syntax="PutPlayerInVehicle(playerid, vehicleid, seatid)">
+			<attribute name="native"/>
+			<referrer name="OnDialogResponse"/>
+			<param name="playerid">
+			</param>
+			<param name="vehicleid">
+			</param>
+			<param name="seatid">
+			</param>
+		</member>
+		<member name="M:RemovePlayerMapIcon" syntax="RemovePlayerMapIcon(playerid, iconid)">
+			<attribute name="native"/>
+			<referrer name="OnDialogResponse"/>
+			<param name="playerid">
+			</param>
+			<param name="iconid">
+			</param>
+		</member>
 		<member name="M:SSCANF_Init" syntax="SSCANF_Init(players, invalid, len)">
 			<attribute name="native"/>
 			<referrer name="OnFilterScriptInit"/>
@@ -2716,24 +4033,82 @@
 		</member>
 		<member name="M:SSCANF_OnGameModeInit" syntax="SSCANF_OnGameModeInit()">
 			<attribute name="public"/>
-			<stacksize value="3"/>
+			<stacksize value="400"/>
+			<dependency name="Float:operator=(_:)"/>
+			<dependency name="ApplyActorAnimation"/>
+			<dependency name="Casas"/>
+			<dependency name="CasasT"/>
+			<dependency name="CmnhT"/>
+			<dependency name="CmnhT2"/>
+			<dependency name="Create3DTextLabel"/>
+			<dependency name="CreateActor"/>
+			<dependency name="CreateObject"/>
+			<dependency name="CreatePickup"/>
+			<dependency name="DOF2_GetFloat"/>
+			<dependency name="DOF2_GetInt"/>
+			<dependency name="DOF2_GetString"/>
+			<dependency name="DOF2_GetString"/>
 			<dependency name="DisableInteriorEnterExits"/>
+			<dependency name="Empresa"/>
+			<dependency name="EmpresaT"/>
 			<dependency name="EnableStuntBonusForAll"/>
+			<dependency name="Governo"/>
+			<dependency name="GovernoT"/>
+			<dependency name="OrgsID"/>
+			<dependency name="SaidasID"/>
+			<dependency name="SetActorInvulnerable"/>
+			<dependency name="SetActorVirtualWorld"/>
 			<dependency name="SetGameModeText"/>
+			<dependency name="SetTimer"/>
+			<dependency name="actAE"/>
+			<dependency name="actAET"/>
+			<dependency name="actAET2"/>
+			<dependency name="actAuto"/>
+			<dependency name="actAutoT"/>
+			<dependency name="actAutoT2"/>
+			<dependency name="actBank"/>
+			<dependency name="actBankT"/>
+			<dependency name="actBankT2"/>
+			<dependency name="actDetran"/>
+			<dependency name="actDetranT"/>
+			<dependency name="actDetranT2"/>
+			<dependency name="actPref"/>
+			<dependency name="actPrefT"/>
+			<dependency name="actPrefT2"/>
+			<dependency name="fexist"/>
+			<dependency name="format"/>
+			<dependency name="pckpJornal"/>
+			<dependency name="pckpJornalT"/>
+			<dependency name="pckpPizza"/>
+			<dependency name="pckpPizzaT"/>
+			<dependency name="profJornal"/>
+			<dependency name="profJornal2"/>
+			<dependency name="profPizza"/>
+			<dependency name="profPizza2"/>
+			<dependency name="s"/>
+			<dependency name="s2"/>
+			<dependency name="strcmp"/>
+			<dependency name="timerOrgs"/>
+			<dependency name="timerSaida"/>
+			<dependency name="tmrCasas"/>
+			<dependency name="true"/>
 		</member>
 		<member name="M:SSCANF_OnPlayerConnect" syntax="SSCANF_OnPlayerConnect(playerid)">
 			<attribute name="public"/>
-			<stacksize value="140"/>
+			<stacksize value="270"/>
 			<dependency name="CreateClock"/>
-			<dependency name="InterpolateCameraLookAt"/>
-			<dependency name="InterpolateCameraPos"/>
+			<dependency name="DOF2_GetFloat"/>
+			<dependency name="DOF2_GetInt"/>
 			<dependency name="IsPlayerNPC"/>
 			<dependency name="PlayerName"/>
+			<dependency name="SetPlayerMapIcon"/>
 			<dependency name="SetTimer"/>
 			<dependency name="SpawnPlayer"/>
 			<dependency name="false"/>
+			<dependency name="fexist"/>
 			<dependency name="format"/>
-			<dependency name="random"/>
+			<dependency name="random2"/>
+			<dependency name="true"/>
 			<param name="playerid">
 			</param>
 		</member>
@@ -2743,6 +4118,8 @@
 			<dependency name="KillTimer"/>
 			<dependency name="Logado"/>
 			<dependency name="SalvarConta"/>
+			<dependency name="tmrKick"/>
+			<dependency name="tmrRadar"/>
 			<dependency name="tmrclock"/>
 			<param name="playerid">
 			</param>
@@ -2775,16 +4152,64 @@
 		</member>
 		<member name="M:SendClientMessage" syntax="SendClientMessage(playerid, color, message[])">
 			<attribute name="native"/>
+			<referrer name="KickPlayer"/>
 			<referrer name="ClearPlayerChat"/>
+			<referrer name="CheckCasas"/>
+			<referrer name="CheckProfs"/>
+			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
+			<referrer name="OnDialogResponse"/>
+			<referrer name="OnPlayerExitVehicle"/>
+			<referrer name="OnVehicleDeath"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="OnPlayerDeath"/>
+			<referrer name="OnPlayerEnterVehicle"/>
+			<referrer name="CheckRadar"/>
+			<referrer name="OnPlayerUpdate"/>
 			<referrer name="cmd_m"/>
 			<referrer name="cmd_cores"/>
+			<referrer name="cmd_tp"/>
+			<referrer name="cmd_j"/>
+			<referrer name="cmd_pegarjornal"/>
+			<referrer name="cmd_pegarpizza"/>
+			<referrer name="cmd_createhotel"/>
+			<referrer name="cmd_createpizza"/>
+			<referrer name="cmd_createlanche"/>
+			<referrer name="cmd_spawn"/>
+			<referrer name="cmd_createsaida"/>
+			<referrer name="cmd_ppos"/>
+			<referrer name="cmd_createdp"/>
+			<referrer name="cmd_createprefeitura"/>
+			<referrer name="cmd_createae"/>
+			<referrer name="cmd_createdetran"/>
+			<referrer name="cmd_createauto"/>
+			<referrer name="cmd_createbank"/>
+			<referrer name="cmd_sethab"/>
+			<referrer name="cmd_createcasa"/>
+			<referrer name="cmd_createemp"/>
+			<referrer name="cmd_setinterior"/>
 			<param name="playerid">
 			</param>
 			<param name="color">
 			</param>
 			<param name="message">
 				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:SetActorInvulnerable" syntax="SetActorInvulnerable(actorid, invulnerable)">
+			<attribute name="native"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
+			<param name="actorid">
+			</param>
+			<param name="invulnerable">
+			</param>
+		</member>
+		<member name="M:SetActorVirtualWorld" syntax="SetActorVirtualWorld(actorid, vworld)">
+			<attribute name="native"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
+			<param name="actorid">
+			</param>
+			<param name="vworld">
 			</param>
 		</member>
 		<member name="M:SetGameModeText" syntax="SetGameModeText(string[])">
@@ -2794,9 +4219,56 @@
 				<paraminfo> [] </paraminfo>
 			</param>
 		</member>
+		<member name="M:SetPlayerInterior" syntax="SetPlayerInterior(playerid, interiorid)">
+			<attribute name="native"/>
+			<referrer name="CheckOrgs"/>
+			<referrer name="CheckSaidas"/>
+			<referrer name="CheckCasas"/>
+			<referrer name="OnPlayerSpawn"/>
+			<referrer name="OnDialogResponse"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="cmd_spawn"/>
+			<referrer name="cmd_setinterior"/>
+			<param name="playerid">
+			</param>
+			<param name="interiorid">
+			</param>
+		</member>
+		<member name="M:SetPlayerMapIcon" syntax="SetPlayerMapIcon(playerid, iconid, x, y, z, markertype, color, style)">
+			<attribute name="native"/>
+			<referrer name="SSCANF_OnPlayerConnect"/>
+			<referrer name="OnDialogResponse"/>
+			<param name="playerid">
+			</param>
+			<param name="iconid">
+			</param>
+			<param name="x">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="y">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="z">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="markertype">
+			</param>
+			<param name="color">
+			</param>
+			<param name="style">
+			</param>
+		</member>
 		<member name="M:SetPlayerPos" syntax="SetPlayerPos(playerid, x, y, z)">
 			<attribute name="native"/>
+			<referrer name="CheckOrgs"/>
+			<referrer name="CheckSaidas"/>
+			<referrer name="CheckCasas"/>
+			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
+			<referrer name="OnPlayerExitVehicle"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="cmd_tp"/>
+			<referrer name="cmd_spawn"/>
 			<param name="playerid">
 			</param>
 			<param name="x">
@@ -2806,6 +4278,38 @@
 				<paraminfo>Float </paraminfo>
 			</param>
 			<param name="z">
+				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
+		<member name="M:SetPlayerRaceCheckpoint" syntax="SetPlayerRaceCheckpoint(playerid, type, x, y, z, nextx, nexty, nextz, size)">
+			<attribute name="native"/>
+			<referrer name="OnDialogResponse"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="cmd_pegarjornal"/>
+			<referrer name="cmd_pegarpizza"/>
+			<param name="playerid">
+			</param>
+			<param name="type">
+			</param>
+			<param name="x">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="y">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="z">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="nextx">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="nexty">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="nextz">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="size">
 				<paraminfo>Float </paraminfo>
 			</param>
 		</member>
@@ -2819,16 +4323,42 @@
 		</member>
 		<member name="M:SetPlayerSkin" syntax="SetPlayerSkin(playerid, skinid)">
 			<attribute name="native"/>
+			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
 			<param name="playerid">
 			</param>
 			<param name="skinid">
 			</param>
 		</member>
+		<member name="M:SetPlayerSpecialAction" syntax="SetPlayerSpecialAction(playerid, actionid)">
+			<attribute name="native"/>
+			<referrer name="cmd_j"/>
+			<param name="playerid">
+			</param>
+			<param name="actionid">
+			</param>
+		</member>
+		<member name="M:SetPlayerVirtualWorld" syntax="SetPlayerVirtualWorld(playerid, worldid)">
+			<attribute name="native"/>
+			<referrer name="CheckCasas"/>
+			<param name="playerid">
+			</param>
+			<param name="worldid">
+			</param>
+		</member>
 		<member name="M:SetTimer" syntax="SetTimer(funcname[], interval, repeating)">
 			<attribute name="native"/>
+			<referrer name="KickPlayer"/>
+			<referrer name="activateOrgs"/>
+			<referrer name="activateSaidas"/>
+			<referrer name="activateCasas"/>
+			<referrer name="CheckOrgs"/>
+			<referrer name="CheckSaidas"/>
+			<referrer name="CheckCasas"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<referrer name="SSCANF_OnPlayerConnect"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
+			<referrer name="OnDialogResponse"/>
 			<param name="funcname">
 				<paraminfo> [] </paraminfo>
 			</param>
@@ -2839,6 +4369,7 @@
 		</member>
 		<member name="M:ShowPlayerDialog" syntax="ShowPlayerDialog(playerid, dialogid, style, caption[], info[], button1[], button2[])">
 			<attribute name="native"/>
+			<referrer name="CheckPref"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
 			<referrer name="OnDialogResponse"/>
 			<param name="playerid">
@@ -2868,6 +4399,14 @@
 			<param name="playerid">
 			</param>
 		</member>
+		<member name="M:TogglePlayerControllable" syntax="TogglePlayerControllable(playerid, toggle)">
+			<attribute name="native"/>
+			<referrer name="OnPlayerEnterVehicle"/>
+			<param name="playerid">
+			</param>
+			<param name="toggle">
+			</param>
+		</member>
 		<member name="M:TogglePlayerSpectating" syntax="TogglePlayerSpectating(playerid, toggle)">
 			<attribute name="native"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
@@ -2886,6 +4425,50 @@
 			<dependency name="format"/>
 			<dependency name="getdate"/>
 			<dependency name="gettime"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:activateCasas" syntax="activateCasas(playerid)">
+			<attribute name="public"/>
+			<stacksize value="5"/>
+			<dependency name="SetTimer"/>
+			<dependency name="tmrCasas"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:activateOrgs" syntax="activateOrgs(playerid)">
+			<attribute name="public"/>
+			<stacksize value="5"/>
+			<dependency name="SetTimer"/>
+			<dependency name="timerOrgs"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:activateSaidas" syntax="activateSaidas(playerid)">
+			<attribute name="public"/>
+			<stacksize value="5"/>
+			<dependency name="SetTimer"/>
+			<dependency name="timerSaida"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:casas" syntax="casas(playerid)">
+			<attribute name="public"/>
+			<stacksize value="5"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="cmd_pegarjornal"/>
+			<referrer name="cmd_pegarpizza"/>
+			<dependency name="casass"/>
+			<dependency name="casax"/>
+			<dependency name="casay"/>
+			<dependency name="casaz"/>
+			<dependency name="nextx"/>
+			<dependency name="nexty"/>
+			<dependency name="nextz"/>
+			<dependency name="random"/>
 			<param name="playerid">
 			</param>
 		</member>
@@ -2909,6 +4492,276 @@
 				<paraminfo> [] </paraminfo>
 			</param>
 		</member>
+		<member name="M:cmd_createae" syntax="cmd_createae(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="30267"/>
+			<dependency name="Create3DTextLabel"/>
+			<dependency name="CreatePickup"/>
+			<dependency name="DOF2_CreateFile"/>
+			<dependency name="DOF2_SetFloat"/>
+			<dependency name="DOF2_SetInt"/>
+			<dependency name="DOF2_WriteFile"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="Governo"/>
+			<dependency name="GovernoT"/>
+			<dependency name="OrgsID"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:cmd_createauto" syntax="cmd_createauto(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="30267"/>
+			<dependency name="Create3DTextLabel"/>
+			<dependency name="CreatePickup"/>
+			<dependency name="DOF2_CreateFile"/>
+			<dependency name="DOF2_SetFloat"/>
+			<dependency name="DOF2_SetInt"/>
+			<dependency name="DOF2_WriteFile"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="Governo"/>
+			<dependency name="GovernoT"/>
+			<dependency name="OrgsID"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:cmd_createbank" syntax="cmd_createbank(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="30267"/>
+			<dependency name="Create3DTextLabel"/>
+			<dependency name="CreatePickup"/>
+			<dependency name="DOF2_CreateFile"/>
+			<dependency name="DOF2_SetFloat"/>
+			<dependency name="DOF2_SetInt"/>
+			<dependency name="DOF2_WriteFile"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="Governo"/>
+			<dependency name="GovernoT"/>
+			<dependency name="OrgsID"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:cmd_createcasa" syntax="cmd_createcasa(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="3293"/>
+			<dependency name="CasasID"/>
+			<dependency name="Create3DTextLabel"/>
+			<dependency name="CreatePickup"/>
+			<dependency name="DOF2_CreateFile"/>
+			<dependency name="DOF2_GetInt"/>
+			<dependency name="DOF2_SetFloat"/>
+			<dependency name="DOF2_SetInt"/>
+			<dependency name="DOF2_SetString"/>
+			<dependency name="DOF2_WriteFile"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="PlayerName"/>
+			<dependency name="PlayerName"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:cmd_createdetran" syntax="cmd_createdetran(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="30267"/>
+			<dependency name="Create3DTextLabel"/>
+			<dependency name="CreatePickup"/>
+			<dependency name="DOF2_CreateFile"/>
+			<dependency name="DOF2_SetFloat"/>
+			<dependency name="DOF2_SetInt"/>
+			<dependency name="DOF2_WriteFile"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="Governo"/>
+			<dependency name="GovernoT"/>
+			<dependency name="OrgsID"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:cmd_createdp" syntax="cmd_createdp(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="30267"/>
+			<dependency name="Create3DTextLabel"/>
+			<dependency name="CreatePickup"/>
+			<dependency name="DOF2_CreateFile"/>
+			<dependency name="DOF2_SetFloat"/>
+			<dependency name="DOF2_SetInt"/>
+			<dependency name="DOF2_WriteFile"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="Governo"/>
+			<dependency name="GovernoT"/>
+			<dependency name="OrgsID"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:cmd_createemp" syntax="cmd_createemp(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="3293"/>
+			<dependency name="Create3DTextLabel"/>
+			<dependency name="CreatePickup"/>
+			<dependency name="DOF2_CreateFile"/>
+			<dependency name="DOF2_GetInt"/>
+			<dependency name="DOF2_SetFloat"/>
+			<dependency name="DOF2_SetInt"/>
+			<dependency name="DOF2_SetString"/>
+			<dependency name="DOF2_WriteFile"/>
+			<dependency name="EmpresasID"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="PlayerName"/>
+			<dependency name="PlayerName"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:cmd_createhotel" syntax="cmd_createhotel(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="30267"/>
+			<dependency name="Create3DTextLabel"/>
+			<dependency name="CreatePickup"/>
+			<dependency name="DOF2_CreateFile"/>
+			<dependency name="DOF2_SetFloat"/>
+			<dependency name="DOF2_SetInt"/>
+			<dependency name="DOF2_WriteFile"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="Governo"/>
+			<dependency name="GovernoT"/>
+			<dependency name="OrgsID"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:cmd_createlanche" syntax="cmd_createlanche(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="30267"/>
+			<dependency name="Create3DTextLabel"/>
+			<dependency name="CreatePickup"/>
+			<dependency name="DOF2_CreateFile"/>
+			<dependency name="DOF2_SetFloat"/>
+			<dependency name="DOF2_SetInt"/>
+			<dependency name="DOF2_WriteFile"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="Governo"/>
+			<dependency name="GovernoT"/>
+			<dependency name="OrgsID"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:cmd_createpizza" syntax="cmd_createpizza(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="30267"/>
+			<dependency name="Create3DTextLabel"/>
+			<dependency name="CreatePickup"/>
+			<dependency name="DOF2_CreateFile"/>
+			<dependency name="DOF2_SetFloat"/>
+			<dependency name="DOF2_SetInt"/>
+			<dependency name="DOF2_WriteFile"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="Governo"/>
+			<dependency name="GovernoT"/>
+			<dependency name="OrgsID"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:cmd_createprefeitura" syntax="cmd_createprefeitura(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="30267"/>
+			<dependency name="Create3DTextLabel"/>
+			<dependency name="CreatePickup"/>
+			<dependency name="DOF2_CreateFile"/>
+			<dependency name="DOF2_SetFloat"/>
+			<dependency name="DOF2_SetInt"/>
+			<dependency name="DOF2_WriteFile"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="Governo"/>
+			<dependency name="GovernoT"/>
+			<dependency name="OrgsID"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:cmd_createsaida" syntax="cmd_createsaida(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="30268"/>
+			<dependency name="Create3DTextLabel"/>
+			<dependency name="CreatePickup"/>
+			<dependency name="DOF2_CreateFile"/>
+			<dependency name="DOF2_SetFloat"/>
+			<dependency name="DOF2_SetInt"/>
+			<dependency name="DOF2_WriteFile"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="SaidasID"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<dependency name="s"/>
+			<dependency name="s2"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:cmd_j" syntax="cmd_j(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="5"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerSpecialAction"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
 		<member name="M:cmd_m" syntax="cmd_m(playerid, params[])">
 			<attribute name="public"/>
 			<stacksize value="3011"/>
@@ -2922,10 +4775,136 @@
 				<paraminfo> [] </paraminfo>
 			</param>
 		</member>
+		<member name="M:cmd_pegarjornal" syntax="cmd_pegarjornal(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="268"/>
+			<dependency name="DOF2_GetString"/>
+			<dependency name="GetPlayerVehicleID"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="JornalT"/>
+			<dependency name="PlayerName"/>
+			<dependency name="PlayerName"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerRaceCheckpoint"/>
+			<dependency name="bike1"/>
+			<dependency name="casas"/>
+			<dependency name="casax"/>
+			<dependency name="casay"/>
+			<dependency name="casaz"/>
+			<dependency name="false"/>
+			<dependency name="format"/>
+			<dependency name="jornais"/>
+			<dependency name="nextx"/>
+			<dependency name="nexty"/>
+			<dependency name="nextz"/>
+			<dependency name="strcmp"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:cmd_pegarpizza" syntax="cmd_pegarpizza(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="268"/>
+			<dependency name="DOF2_GetString"/>
+			<dependency name="DisablePlayerCheckpoint"/>
+			<dependency name="GetPlayerVehicleID"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="Pbike"/>
+			<dependency name="PizzaT"/>
+			<dependency name="Pizzas"/>
+			<dependency name="PlayerName"/>
+			<dependency name="PlayerName"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerRaceCheckpoint"/>
+			<dependency name="casas"/>
+			<dependency name="casax"/>
+			<dependency name="casay"/>
+			<dependency name="casaz"/>
+			<dependency name="false"/>
+			<dependency name="format"/>
+			<dependency name="nextx"/>
+			<dependency name="nexty"/>
+			<dependency name="nextz"/>
+			<dependency name="strcmp"/>
+			<dependency name="true"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:cmd_ppos" syntax="cmd_ppos(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="165"/>
+			<dependency name="GetPlayerFacingAngle"/>
+			<dependency name="GetPlayerInterior"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:cmd_sethab" syntax="cmd_sethab(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="1160"/>
+			<dependency name="DOF2_SetInt"/>
+			<dependency name="PlayerName"/>
+			<dependency name="PlayerName"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:cmd_setinterior" syntax="cmd_setinterior(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="134"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerInterior"/>
+			<dependency name="sscanf"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:cmd_spawn" syntax="cmd_spawn(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="6"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerInterior"/>
+			<dependency name="SetPlayerPos"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
 		<member name="M:cmd_spawnplayer" syntax="cmd_spawnplayer(playerid, params[])">
 			<attribute name="public"/>
 			<stacksize value="3"/>
 			<dependency name="SpawnPlayer"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:cmd_tp" syntax="cmd_tp(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="10"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="SetPlayerPos"/>
+			<dependency name="sscanf"/>
 			<param name="playerid">
 			</param>
 			<param name="params">
@@ -2948,6 +4927,9 @@
 			<referrer name="DOF2_RenameFile"/>
 			<referrer name="DOF2_CopyFile"/>
 			<referrer name="DOF2_ParseFile"/>
+			<referrer name="LoadRadares"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
+			<referrer name="SSCANF_OnPlayerConnect"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
 			<param name="pattern">
 				<paraminfo> [] </paraminfo>
@@ -2999,6 +4981,7 @@
 			<attribute name="native"/>
 			<referrer name="operator+(Float:,_:)"/>
 			<referrer name="SalvarConta"/>
+			<referrer name="CheckRadar"/>
 			<param name="oper1">
 				<paraminfo>Float </paraminfo>
 			</param>
@@ -3047,10 +5030,40 @@
 			<tagname value="Float"/>
 			<attribute name="native"/>
 			<referrer name="operator*(Float:,_:)"/>
+			<referrer name="CheckRadar"/>
 			<param name="oper1">
 				<paraminfo>Float </paraminfo>
 			</param>
 			<param name="oper2">
+				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
+		<member name="M:floatpower" syntax="floatpower(value, exponent)">
+			<tagname value="Float"/>
+			<attribute name="native"/>
+			<referrer name="CheckRadar"/>
+			<param name="value">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="exponent">
+				<paraminfo>Float </paraminfo>
+			</param>
+		</member>
+		<member name="M:floatround" syntax="floatround(value, method)">
+			<attribute name="native"/>
+			<referrer name="CheckRadar"/>
+			<param name="value">
+				<paraminfo>Float </paraminfo>
+			</param>
+			<param name="method">
+				<paraminfo>floatround_method </paraminfo>
+			</param>
+		</member>
+		<member name="M:floatsqroot" syntax="floatsqroot(value)">
+			<tagname value="Float"/>
+			<attribute name="native"/>
+			<referrer name="CheckRadar"/>
+			<param name="value">
 				<paraminfo>Float </paraminfo>
 			</param>
 		</member>
@@ -3097,12 +5110,41 @@
 			<referrer name="DOF2_SetFloat"/>
 			<referrer name="DOF2_ParseFile"/>
 			<referrer name="DOF2_File"/>
+			<referrer name="LoadRadares"/>
 			<referrer name="start"/>
+			<referrer name="CheckPref"/>
 			<referrer name="UpdateClock"/>
 			<referrer name="SalvarConta"/>
+			<referrer name="CheckOrgs"/>
+			<referrer name="CheckSaidas"/>
+			<referrer name="CheckCasas"/>
+			<referrer name="CheckProfs"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<referrer name="SSCANF_OnPlayerConnect"/>
+			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
 			<referrer name="OnDialogResponse"/>
+			<referrer name="OnPlayerExitVehicle"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<referrer name="OnPlayerEnterVehicle"/>
+			<referrer name="CheckRadar"/>
+			<referrer name="OnPlayerUpdate"/>
+			<referrer name="cmd_pegarjornal"/>
+			<referrer name="cmd_pegarpizza"/>
+			<referrer name="cmd_createhotel"/>
+			<referrer name="cmd_createpizza"/>
+			<referrer name="cmd_createlanche"/>
+			<referrer name="cmd_createsaida"/>
+			<referrer name="cmd_ppos"/>
+			<referrer name="cmd_createdp"/>
+			<referrer name="cmd_createprefeitura"/>
+			<referrer name="cmd_createae"/>
+			<referrer name="cmd_createdetran"/>
+			<referrer name="cmd_createauto"/>
+			<referrer name="cmd_createbank"/>
+			<referrer name="cmd_sethab"/>
+			<referrer name="cmd_createcasa"/>
+			<referrer name="cmd_createemp"/>
 			<param name="output">
 				<paraminfo> [] </paraminfo>
 			</param>
@@ -3177,6 +5219,7 @@
 			<attribute name="native"/>
 			<referrer name="DOF2_MakeBackup"/>
 			<referrer name="UpdateClock"/>
+			<referrer name="CheckRadar"/>
 			<param name="hour">
 				<paraminfo> &amp; </paraminfo>
 			</param>
@@ -3190,6 +5233,7 @@
 		<member name="M:main" syntax="main()">
 			<attribute name="entry"/>
 			<stacksize value="3"/>
+			<dependency name="LoadRadares"/>
 			<dependency name="printf"/>
 		</member>
 		<member name="M:print" syntax="print(string[])">
@@ -3202,6 +5246,7 @@
 		<member name="M:printf" syntax="printf(format[], ...)">
 			<attribute name="native"/>
 			<referrer name="DOF2_PrintFile"/>
+			<referrer name="LoadRadares"/>
 			<referrer name="main"/>
 			<param name="format">
 				<paraminfo> [] </paraminfo>
@@ -3213,13 +5258,32 @@
 		<member name="M:random" syntax="random(max)">
 			<attribute name="native"/>
 			<referrer name="DOF2_SortEntries"/>
+			<referrer name="random2"/>
+			<referrer name="casas"/>
+			<param name="max">
+			</param>
+		</member>
+		<member name="M:random2" syntax="random2(min, max)">
+			<stacksize value="3"/>
+			<referrer name="start"/>
 			<referrer name="SSCANF_OnPlayerConnect"/>
+			<referrer name="OnPlayerEnterRaceCheckpoint"/>
+			<dependency name="random"/>
+			<param name="min">
+			</param>
 			<param name="max">
 			</param>
 		</member>
 		<member name="M:sscanf" syntax="sscanf(data[], format[], ...)">
 			<attribute name="native"/>
+			<referrer name="OnDialogResponse"/>
 			<referrer name="cmd_m"/>
+			<referrer name="cmd_tp"/>
+			<referrer name="cmd_createsaida"/>
+			<referrer name="cmd_sethab"/>
+			<referrer name="cmd_createcasa"/>
+			<referrer name="cmd_createemp"/>
+			<referrer name="cmd_setinterior"/>
 			<param name="data">
 				<paraminfo> [] </paraminfo>
 			</param>
@@ -3250,10 +5314,13 @@
 		</member>
 		<member name="M:start" syntax="start(playerid)">
 			<attribute name="public"/>
-			<stacksize value="135"/>
+			<stacksize value="140"/>
 			<dependency name="CreateInicial"/>
+			<dependency name="InterpolateCameraLookAt"/>
+			<dependency name="InterpolateCameraPos"/>
 			<dependency name="PlayerName"/>
 			<dependency name="format"/>
+			<dependency name="random2"/>
 			<param name="playerid">
 			</param>
 		</member>
@@ -3266,6 +5333,7 @@
 			<referrer name="DOF2_strreplace"/>
 			<referrer name="DOF2_udb_encode"/>
 			<referrer name="DOF2_udb_decode"/>
+			<referrer name="OnDialogResponse"/>
 			<param name="dest">
 				<paraminfo> [] </paraminfo>
 			</param>
@@ -3297,7 +5365,13 @@
 			<referrer name="DOF2_strreplace"/>
 			<referrer name="sscanf_weapon"/>
 			<referrer name="sscanf_vehicle"/>
+			<referrer name="CheckCasas"/>
+			<referrer name="CheckProfs"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
+			<referrer name="OnDialogResponse"/>
+			<referrer name="cmd_pegarjornal"/>
+			<referrer name="cmd_pegarpizza"/>
 			<param name="string1">
 				<paraminfo> [] </paraminfo>
 			</param>
