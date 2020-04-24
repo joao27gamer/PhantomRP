@@ -1,4 +1,4 @@
-
+//teste
 //includes//
 #include <a_samp>
 #include <core>
