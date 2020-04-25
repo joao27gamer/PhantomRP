@@ -1,4 +1,4 @@
-//teste4
+//teste pa carai
 
 //includes//
 #include <a_samp>
@@ -3139,6 +3139,7 @@ CMD:comprarcasa(playerid, params[]){
 	return 1;
 }
 //comandos//
+
 
 
 
