@@ -1,4 +1,5 @@
 //alice é linda pa carai
+//Eu amo muito vc
 
 //includes//
 #include <a_samp>
