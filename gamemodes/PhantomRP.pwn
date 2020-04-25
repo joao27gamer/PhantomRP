@@ -1,4 +1,4 @@
-//testezin
+//alice é linda pa carai
 
 //includes//
 #include <a_samp>
