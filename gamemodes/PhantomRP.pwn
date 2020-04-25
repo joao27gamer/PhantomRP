@@ -1,4 +1,4 @@
-//teste pa carai
+//testezin
 
 //includes//
 #include <a_samp>
