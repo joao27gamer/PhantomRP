@@ -81,9 +81,9 @@ new float:lastx[MAX_PLAYERS],float:lasty[MAX_PLAYERS],float:lastz[MAX_PLAYERS];
 new float:lx[MAX_PLAYERS],float:ly[MAX_PLAYERS],float:lz[MAX_PLAYERS];
 new timerOrgs, timerSaida, timerRecupS, timerRecupOrgs;
 new inpref[MAX_PLAYERS];
-new actPref, actBank, actDetran, actPolice, actAE, actAuto;
-new actPrefT, actBankT, actDetranT, actPoliceT, actAET, actAutoT;
-new actPrefT2, actBankT2, actDetranT2, actPoliceT2, actAET2, actAutoT2;
+new actPref, actBank, actDetran, actPolice, actAE, actAuto, actImo;
+new actPrefT, actBankT, actDetranT, actPoliceT, actAET, actAutoT, actImoT;
+new actPrefT2, actBankT2, actDetranT2, actPoliceT2, actAET2, actAutoT2, actImoT2;
 
 new pckPrefT, pckBankT, pckDetranT, pckPoliceT, pckAET, pckAutoT;
 new pckPrefT2, pckBankT2, pckDetranT2, pckPoliceT2, pckAET2, pckAutoT2;
@@ -172,6 +172,11 @@ new tmrCasas;
 #define DIALOG_DEPOSITO 16
 #define DIALOG_SAQUE 17
 #define DIALOG_CHANGEPASS 18
+
+
+
+#define DIALOG_IMOBILIARIA 19
+#define DIALOG_VENDACASA 20
 
 //Dialogs//
 
@@ -301,6 +306,10 @@ public CheckPref(playerid){
 				}else if(DOF2_GetInt(file, "Banco") == 0){
 					ShowPlayerDialog(playerid, DIALOG_NEWSENHA, DIALOG_STYLE_PASSWORD, "Banco", "Digite uma senha para registrar sua conta bancaria.", "Aceitar", "Cancela");
 				}
+			}
+		}if(IsPlayerInRangeOfPoint(playerid, 3.0, 362.775573, 169.893692,1025.789062)){
+			if(Keys == KEY_SECONDARY_ATTACK){
+				ShowPlayerDialog(playerid, DIALOG_IMOBILIARIA, DIALOG_STYLE_TABLIST_HEADERS, "Imobiliaria", "\t\t{008000}Preco\n{ffffff}Licenca para aquisicao de Propriedades\t\t$10000\n{ffffff}Licenca para aquisicao de empresas\t\t$25000\nVender casa");
 			}
 		}
 
@@ -938,7 +947,7 @@ public CheckOrgs(playerid){
 					SetPlayerPos(playerid, 288.745971,169.350997,1007.171875);
 					KillTimer(timerSaida);
 					SetTimer("activateSaidas", 5000, false);
-				}else if(DOF2_GetInt(file, "Pickup") == 19524){
+				}else if(DOF2_GetInt(file, "Pickup") == 1277){
 					DOF2_SetInt(file2, "Interior", 15);
 					//SendClientMessage(playerid, -1, "{00FF00}[HOTEL] {FFFFFF}Voce entrou no hotel.");
 					SetPlayerInterior(playerid, 15);
@@ -957,6 +966,13 @@ public CheckOrgs(playerid){
 					//SendClientMessage(playerid, -1, "{00FF00}[BURGUER-SHOT] {FFFFFF}Voce entrou no Burguer Shot.");
 					SetPlayerInterior(playerid, 10);
 					SetPlayerPos(playerid, 363.742584, -74.305526, 1001.507812);
+					KillTimer(timerSaida);
+					SetTimer("activateSaidas", 5000, false);
+				}else if(DOF2_GetInt(file, "Pickup") == 19524){
+					DOF2_SetInt(file2, "Interior", 3);
+					//SendClientMessage(playerid, -1, "{00FF00}[IMOBILIARIA] {FFFFFF}Voce entrou no Burguer Shot.");
+					SetPlayerInterior(playerid, 3);
+					SetPlayerPos(playerid, 363, 165.5, 1026);
 					KillTimer(timerSaida);
 					SetTimer("activateSaidas", 5000, false);
 				}
@@ -1185,12 +1201,14 @@ public OnGameModeInit(){
 				GovernoT[i] = Text3d:Create3DTextLabel("{FF8000}AGENCIA DE EMPREGOS\n\n{ffffff}Pressione \"F\" para entrar.", 1, DOF2_GetFloat(file, "X"), DOF2_GetFloat(file, "Y"), DOF2_GetFloat(file, "Z"), 50, 0);
 			}else if(pckup == 1274){
 				GovernoT[i] = Text3d:Create3DTextLabel("{FF8000}BANCO\n\n{ffffff}Pressione \"F\" para entrar.", 1, DOF2_GetFloat(file, "X"), DOF2_GetFloat(file, "Y"), DOF2_GetFloat(file, "Z"), 50, 0);
-			}else if(pckup == 19524){
+			}else if(pckup == 1277){
 				GovernoT[i] = Text3d:Create3DTextLabel("{FF8000}HOTEL\n\n{ffffff}Pressione \"F\" para entrar.", 1, DOF2_GetFloat(file, "X"), DOF2_GetFloat(file, "Y"), DOF2_GetFloat(file, "Z"), 50, 0);
 			}else if(pckup == 19197){
 				GovernoT[i] = Text3d:Create3DTextLabel("{FF8000}PIZZARIA\n\n{ffffff}Pressione \"F\" para entrar.", 1, DOF2_GetFloat(file, "X"), DOF2_GetFloat(file, "Y"), DOF2_GetFloat(file, "Z"), 50, 0);
 			}else if(pckup == 19198){
 				GovernoT[i] = Text3d:Create3DTextLabel("{FF8000}BURGUER-SHOT\n\n{ffffff}Pressione \"F\" para entrar.", 1, DOF2_GetFloat(file, "X"), DOF2_GetFloat(file, "Y"), DOF2_GetFloat(file, "Z"), 50, 0);
+			}else if(pckup == 19524){
+				GovernoT[i] = Text3d:Create3DTextLabel("{FF8000}IMOBILIARIA\n\n{ffffff}Pressione \"F\" para entrar.", 1, DOF2_GetFloat(file, "X"), DOF2_GetFloat(file, "Y"), DOF2_GetFloat(file, "Z"), 50, 0);
 			}
 			OrgsID = i+1;
 			// else if(pckup == 1212){
@@ -1269,6 +1287,10 @@ public OnGameModeInit(){
 			}else if(DOF2_GetInt(file, "Tipo") == 13){
 				format(nome, sizeof(nome), "{FF8000}Loja de utilitarios\n\n{FFFFFF}Pressione \"f\" ou \"ENTER\" para sair.");
 				s[i] = Text3D:Create3DTextLabel(nome, -1, DOF2_GetFloat(file, "X"), DOF2_GetFloat(file, "Y"), DOF2_GetFloat(file, "Z"), 10.0, 0);
+			
+			}else if(DOF2_GetInt(file, "Tipo") == 14){
+				format(nome, sizeof(nome), "{FF8000}Imobiliaria\n\n{FFFFFF}Pressione \"f\" ou \"ENTER\" para sair.");
+				s[i] = Text3D:Create3DTextLabel(nome, -1, DOF2_GetFloat(file, "X"), DOF2_GetFloat(file, "Y"), DOF2_GetFloat(file, "Z"), 10.0, 0);
 				
 
 			}
@@ -1332,14 +1354,17 @@ public OnGameModeInit(){
 	actAuto = CreateActor(186, 1488.823486, 1305.642944, 1093.296386, 274.037017);
 	actDetran = CreateActor(187, 294.243011, 182.129043, 1007.171875, 154.441696);
 	actBank = CreateActor(295, 2318.0, -7.246706, 26.742187, 90.433349);
+	actImo = CreateActor(57, 362.157745, 171.662109, 1025.789062, 187.846343);
 
+	
 
 	SetActorVirtualWorld(actPref, 0);
 	SetActorInvulnerable(actPref, true);
 	ApplyActorAnimation(actPref, "PED","SEAT_IDLE", 4.0, 1, 0, 0, 0, 0);
+	ApplyActorAnimation(actImo, "PED","SEAT_IDLE", 4.0, 1, 0, 0, 0, 0);
 	SetActorInvulnerable(actBank, true);
 
-		actPrefT2 = CreatePickup(1212, 1, 362.77471923, 173.68565368, 1008.38281250, 0);
+	actPrefT2 = CreatePickup(1212, 1, 362.77471923, 173.68565368, 1008.38281250, 0);
 	actPrefT = Text3D:Create3DTextLabel("{FF8000}Prefeitura\n{FFFFFF}Pressione \"Y\"", -1, 362.77471923, 173.68565368, 1008.38281250, 50.0);
 
 	actAET2 = CreatePickup(1210, 1, 246.286956, 117.782485, 1003.218750, 0);
@@ -1369,7 +1394,10 @@ public OnGameModeInit(){
 	pckpPizza = CreatePickup(1239, 1, 2122.837402, -1784.188720, 13.387416, 0);
 	pckpPizzaT = Text3D:Create3DTextLabel("{FF8000}Entregador de pizza\n {FFFFFF}Pressione \"Y\"", -1, 2122.837402, -1784.188720, 13.387416, 10.0, 0);
 
+	actImoT = CreatePickup(1239, 1, 362.775573, 169.893692,1025.789062, 0);
+	actImoT2 = Text3D:Create3DTextLabel("{FF8000}Imobiliaria\n {FFFFFF}Pressione \"Y\"", -1, 362.775573, 169.893692,1025.789062, 10.0, 0);
 
+	
 	CreateObject(3557, 2530.12231, -1948.62964, 14.91125,   0.00000, 0.00000, 0.00000);
 		CreateObject(19906, 2526.17114, -1950.10010, 14.94250,   90.00000, 0.00000, 0.00000);
 		CreateObject(19906, 2526.30249, -1955.07104, 15.08270,   0.00000, 0.00000, 0.00000);
@@ -1397,6 +1425,7 @@ public OnGameModeInit(){
 		CreateObject(970, 1152.49365, -1756.24365, 13.26100,   0.00000, 0.00000, 0.00000);
 		CreateObject(3471, 1146.82715, -1771.55505, 16.81960,   0.00000, 0.00000, 90.00000);
 		CreateObject(3471, 1160.71277, -1771.49805, 16.81960,   0.00000, 0.00000, 90.00000);
+		CreateObject(13360, 363.5, 165.3, 1025.7, 0.00000, 0.00000, 0.00000);
     return 1;
 }
 
@@ -1451,6 +1480,9 @@ public OnPlayerDisconnect(playerid, reason){
 	KillTimer(tmrRadar[playerid]);
 	KillTimer(tmrKick[playerid]);
 	if(Logado[playerid]) SalvarConta(playerid);
+	new file[128];
+	format(file, sizeof(file), CONTAS, PlayerName(playerid));
+	DOF2_SetInt(file, "Interior", GetPlayerInterior(playerid));
     
     return 1;
 }
@@ -1511,6 +1543,11 @@ public OnPlayerSpawn(playerid){
 		SetPlayerInterior(playerid, 0);
 		SetPlayerPos(playerid, 1481.060546, -1767.387573, 18.795755);
 		if(GetPlayerSkin(playerid) == 0) SetPlayerSkin(playerid, 154);
+	}
+	else {
+		SetPlayerInterior(DOF2_GetInt(file, "Interior"));
+		SetPlayerPos(playerid, DOF2_GetFloat(file, "X"), DOF2_GetFloat(file, "Y"), DOF2_GetFloat(file, "Z"));
+		SetPlayerSkin(playerid, DOF2_GetInt(file, "Skin"));
 	}
 	KillTimer(tmrKick[playerid]);
 	return 1;
@@ -2028,6 +2065,28 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[]){
 			}else{
 				DOF2_SetString(file, "SenhaBanco", inputtext);
 				SendClientMessage(playerid, -1, "{00FF00}[BANCO]{FFFFFF}Senha da conta bancaria alterada com sucesso.")
+			}
+		}
+	}
+	if(dialogid == DIALOG_IMOBILIARIA){
+		if(response == 1){
+			new file2[128], temcasa[MAX_PLAYERS];
+			if(listitem == 0){
+				if(GetPlayerMoney(playerid) < 10000) return SendClientMessage(playerid, -1, "{ff0000}[ERRO]{ffffff}Voce nao tem dinheiro suficiente.");
+				if(DOF2_GetInt(file, "LicencaCasa") == 1) return SendClientMessage(playerid, -1, "{ff0000}[ERRO]{ffffff}Voce ja possui esta licenca.");
+				for(new i = 0; i< MAX_CASAS; i++){
+					format(file2, sizeof(file2), CASAS, i);
+					if(strcmp(DOF2_GetString(file, "Proprietario"), PlayerName(playerid))){
+						temcasa[playerid] = 1;
+						i = MAX_CASAS;
+					}else{
+						temcasa[playerid] = 0;
+					}
+				}
+				if(temcasa[playerid] == 1) return SendClientMessage(playerid, -1, "{ff0000}[ERRO]{ffffff}Voce ja possui uma propriedade.");
+				DOF2_SetInt(file, "LicencaCasa", 1);
+				GivePlayerMoney(playerid, -10000);
+				SendClientMessage(playerid, -1, "{00ff00}[CASA]{ffffff}Licenca adiquirida.");
 			}
 		}
 	}
@@ -2755,7 +2814,7 @@ CMD:createhotel(playerid, params[]){
 		new file[128],pckp, nome[128], float:x[10000], float:y[10000], float:z[10000];
 		format(file, sizeof(file), ORGS, OrgsID);
 		GetPlayerPos(playerid, x[playerid], y[playerid], z[playerid]);
-		pckp = 19524;
+		pckp = 1277;
 		Governo[OrgsID] = CreatePickup(pckp, 1, x[playerid], y[playerid], z[playerid], 0);
 		format(nome, sizeof(nome), "{FF8000}Hotel\n\n{FFFFFF}Pressione \"f\" ou \"ENTER\" para entrar.");
 		GovernoT[OrgsID] = Text3D:Create3DTextLabel(nome, -1, x[playerid], y[playerid], z[playerid], 10.0, 0);
@@ -2997,10 +3056,10 @@ CMD:createcasa(playerid, params[]){
 	DOF2_SetInt(file, "Preco", preco);
 	DOF2_SaveFile(file);
 
-	CreatePickup(19522, 1, x[playerid], y[playerid], z[playerid], 0);
+	Casas[CasasID] = CreatePickup(19522, 1, x[playerid], y[playerid], z[playerid], 0);
 	new msg[128];
 	format(msg, sizeof(msg), "{ffffff}Casa de: {1010ff}Ninguem\n{ffffff}ID:{1010ff}%d\n{008000}$%d\n\n{ffffff}Pressione \"F\" para entrar.", PlayerName(playerid), CasasID, DOF2_GetInt(file, "Preco"));
-	Create3DTextLabel(msg, -1, x[playerid], y[playerid], z[playerid], 50.0, 0);
+	CasasT[CasasID] = Create3DTextLabel(msg, -1, x[playerid], y[playerid], z[playerid], 25.0, 0);
 	SendClientMessage(playerid, -1, "{00FF00}[CASAS]{ffffff}Propriedade criada com sucesso.");
 	CasasID++;
 
@@ -3020,10 +3079,10 @@ CMD:createemp(playerid, params[]){
 	DOF2_SetInt(file, "Preco", preco);
 	DOF2_SaveFile(file);
 
-	CreatePickup(19522, 1, x[playerid], y[playerid], z[playerid], 0);
+	Empresa[EmpresasID] = CreatePickup(19522, 1, x[playerid], y[playerid], z[playerid], 0);
 	new msg[128];
 	format(msg, sizeof(msg), "{ffffff}Empresa de: {1010ff}%s\n{ffffff}ID:{1010ff}%d\n{008000}$%d\n\n{ffffff}Pressione \"F\" para entrar.", PlayerName(playerid), EmpresasID, DOF2_GetInt(file, "Preco"));
-	Create3DTextLabel(msg, -1, x[playerid], y[playerid], z[playerid], 50.0, 0);
+	EmpresaT[EmpresasID] = Create3DTextLabel(msg, -1, x[playerid], y[playerid], z[playerid], 50.0, 0);
 	SendClientMessage(playerid, -1, "{00FF00}[EMPRESAS]{ffffff}Empresas criada com sucesso.");
 	EmpresasID++;
 
@@ -3034,6 +3093,48 @@ CMD:setinterior(playerid, params[]){
 	if(sscanf(params, "d", interior)) return SendClientMessage(playerid, -1, "{ff0000}[ERRO]{ffffff}Digite: /setinterior [id do interior]");
 	SetPlayerInterior(playerid, interior);
 	SendClientMessage(playerid, -1, "{00ff00}[INTERIOR]{ffffff}Interior alterado com sucesso!");
+
+	return 1;
+}
+CMD:createimo(playerid, params[]){
+		new file[128],pckp, nome[128], float:x[10000], float:y[10000], float:z[10000];
+		format(file, sizeof(file), ORGS, OrgsID);
+		GetPlayerPos(playerid, x[playerid], y[playerid], z[playerid]);
+		pckp = 19524;
+		Governo[OrgsID] = CreatePickup(pckp, 1, x[playerid], y[playerid], z[playerid], 0);
+		format(nome, sizeof(nome), "{FF8000}Imobiliaria\n\n{FFFFFF}Pressione \"f\" ou \"ENTER\" para entrar.");
+		GovernoT[OrgsID] = Text3D:Create3DTextLabel(nome, -1, x[playerid], y[playerid], z[playerid], 10.0, 0);
+
+		DOF2_CreateFile(file);
+		DOF2_SetInt(file, "Pickup",pckp);
+		DOF2_SetFloat(file,"X" , x[playerid]);
+		DOF2_SetFloat(file,"Y" , y[playerid]);
+		DOF2_SetFloat(file,"Z" , z[playerid]);
+		DOF2_SaveFile(file);
+		OrgsID++;
+		SendClientMessage(playerid, -1, "{00FF00}[ORGS] {FFFFFF}Organizacao criada com sucesso!.");
+		return 1;
+}
+CMD:comprarcasa(playerid, params[]){
+	new file[128], file2[128];
+	format(file, sizeof(file), CONTAS, PlayerName(playerid));
+	for(new i = 0; i < MAX_CASAS; i++){
+		format(file2, sizeof(file2), CASAS, i);
+		if(!IsPlayerInRangeOfPoint(playerid, DOF2_GetFloat(file2, "X"), DOF2_GetFloat(file2, "Y"), DOF2_GetFloat(file2, "Z"))) return SendClientMessage(playerid, -1, "{ff0000}[ERRO]{ffffff}Voce nao esta proximo de uma casa.");
+		if(DOF2_GetInt(file, "LicencaCasa") == 0) return SendClientMessage(playerid, -1, "{ff0000}[ERRO]{ffffff}Voce nao possui uma licenca, va ate a imobiliaria e compre uma");
+		if(strcmp(DOF2_GetString(file2, "Proprietario"), "Ninguem")) return SendClientMessage(playerid, -1, "{ff0000}[ERRO]{ffffff}Esta propriedade ja tem dono.");
+		//if(strcmp(DOF2_GetString(file2, "Proprietario"), PlayerName(playerid) == 0)) return SendClientMessage(playerid, -1, "{FF0000}[ERRO]{FFFFFF}Esta propriedade ja e sua.");
+		if(GetPlayerMoney(playerid) < DOF2_GetInt(file2, "Preco")) return SendClientMessage(playerid, -1, "{FF0000}[ERRO]{FFFFFF}Voce nao tem dinheiro suficiente.");
+		DestroyPickup(Casas[i]);
+		Delete3DTextLabel(CasasT[i]);
+		Casas[CasasID] = CreatePickup(19522, 1, DOF2_GetFloat(file2, "X"), DOF2_GetFloat(file2, "Y"), DOF2_GetFloat(file2, "Z"), 0);
+		new msg[128];
+		format(msg, sizeof(msg), "{ffffff}Casa de: {1010ff}%s\n{ffffff}ID:%d\n\n{ffffff}Pressione \"F\" para entrar.", PlayerName(playerid), i);
+		CasasT[CasasID] = Create3DTextLabel(msg, -1, DOF2_GetFloat(file2, "X"), DOF2_GetFloat(file2, "Y"), DOF2_GetFloat(file2, "Z"), 25.0, 0);
+		SendClientMessage(playerid, -1, "{00ff00}[CASA]{ffffff}Propriedade adquirida com sucesso.");
+		DOF2_SetInt(file, "LicencaCasa", 0);
+		DOF2_GetString(file2, "Proprietario", PlayerName(playerid));
+	}
 
 	return 1;
 }
