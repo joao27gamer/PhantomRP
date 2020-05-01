@@ -110,12 +110,18 @@
 		</member>
 		<member name="F:Casas">
 			<referrer name="SSCANF_OnGameModeInit"/>
+			<referrer name="cmd_createcasa"/>
+			<referrer name="cmd_comprarcasa"/>
 		</member>
 		<member name="F:CasasID">
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<referrer name="cmd_createcasa"/>
+			<referrer name="cmd_comprarcasa"/>
 		</member>
 		<member name="F:CasasT">
 			<referrer name="SSCANF_OnGameModeInit"/>
+			<referrer name="cmd_createcasa"/>
+			<referrer name="cmd_comprarcasa"/>
 		</member>
 		<member name="F:CaseSensitive">
 			<tagname value="bool"/>
@@ -162,11 +168,14 @@
 		</member>
 		<member name="F:Empresa">
 			<referrer name="SSCANF_OnGameModeInit"/>
+			<referrer name="cmd_createemp"/>
 		</member>
 		<member name="F:EmpresaT">
 			<referrer name="SSCANF_OnGameModeInit"/>
+			<referrer name="cmd_createemp"/>
 		</member>
 		<member name="F:EmpresasID">
+			<referrer name="SSCANF_OnGameModeInit"/>
 			<referrer name="cmd_createemp"/>
 		</member>
 		<member name="F:Entries_Count">
@@ -237,6 +246,7 @@
 			<referrer name="cmd_createdetran"/>
 			<referrer name="cmd_createauto"/>
 			<referrer name="cmd_createbank"/>
+			<referrer name="cmd_createimo"/>
 		</member>
 		<member name="F:GovernoT">
 			<referrer name="SSCANF_OnGameModeInit"/>
@@ -249,6 +259,7 @@
 			<referrer name="cmd_createdetran"/>
 			<referrer name="cmd_createauto"/>
 			<referrer name="cmd_createbank"/>
+			<referrer name="cmd_createimo"/>
 		</member>
 		<member name="F:InfoRadar">
 			<referrer name="LoadRadares"/>
@@ -285,6 +296,7 @@
 			<referrer name="cmd_createdetran"/>
 			<referrer name="cmd_createauto"/>
 			<referrer name="cmd_createbank"/>
+			<referrer name="cmd_createimo"/>
 		</member>
 		<member name="F:Pbike">
 			<referrer name="OnVehicleDeath"/>
@@ -425,6 +437,15 @@
 			<referrer name="SSCANF_OnGameModeInit"/>
 		</member>
 		<member name="F:actDetranT2">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:actImo">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:actImoT">
+			<referrer name="SSCANF_OnGameModeInit"/>
+		</member>
+		<member name="F:actImoT2">
 			<referrer name="SSCANF_OnGameModeInit"/>
 		</member>
 		<member name="F:actPolice">
@@ -919,6 +940,7 @@
 		<member name="M:Float:operator=(_:)" syntax="Float:operator=(_:)(oper)">
 			<tagname value="Float"/>
 			<attribute name="native"/>
+			<referrer name="CheckOrgs"/>
 			<referrer name="CheckProfs"/>
 			<referrer name="SSCANF_OnGameModeInit"/>
 			<referrer name="OnPlayerEnterRaceCheckpoint"/>
@@ -1232,6 +1254,7 @@
 		<member name="M:CheckOrgs" syntax="CheckOrgs(playerid)">
 			<attribute name="public"/>
 			<stacksize value="30400"/>
+			<dependency name="Float:operator=(_:)"/>
 			<dependency name="DOF2_GetFloat"/>
 			<dependency name="DOF2_GetInt"/>
 			<dependency name="DOF2_SetInt"/>
@@ -1370,6 +1393,8 @@
 			<referrer name="cmd_createbank"/>
 			<referrer name="cmd_createcasa"/>
 			<referrer name="cmd_createemp"/>
+			<referrer name="cmd_createimo"/>
+			<referrer name="cmd_comprarcasa"/>
 			<param name="text">
 				<paraminfo> [] </paraminfo>
 			</param>
@@ -1499,6 +1524,8 @@
 			<referrer name="cmd_createbank"/>
 			<referrer name="cmd_createcasa"/>
 			<referrer name="cmd_createemp"/>
+			<referrer name="cmd_createimo"/>
+			<referrer name="cmd_comprarcasa"/>
 			<param name="model">
 			</param>
 			<param name="type">
@@ -1603,6 +1630,7 @@
 			<referrer name="cmd_createbank"/>
 			<referrer name="cmd_createcasa"/>
 			<referrer name="cmd_createemp"/>
+			<referrer name="cmd_createimo"/>
 			<dependency name="DOF2_SetInt"/>
 			<dependency name="DOF2_num_hash"/>
 			<dependency name="fclose"/>
@@ -1680,7 +1708,9 @@
 			<referrer name="CheckCasas"/>
 			<referrer name="SSCANF_OnGameModeInit"/>
 			<referrer name="SSCANF_OnPlayerConnect"/>
+			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
+			<referrer name="cmd_comprarcasa"/>
 			<dependency name="DOF2_GetStringEx"/>
 			<dependency name="floatstr"/>
 			<param name="file">
@@ -1725,6 +1755,7 @@
 			<referrer name="OnPlayerUpdate"/>
 			<referrer name="cmd_createcasa"/>
 			<referrer name="cmd_createemp"/>
+			<referrer name="cmd_comprarcasa"/>
 			<dependency name="DOF2_GetStringEx"/>
 			<dependency name="strval"/>
 			<param name="file">
@@ -1746,6 +1777,7 @@
 			<referrer name="OnDialogResponse"/>
 			<referrer name="cmd_pegarjornal"/>
 			<referrer name="cmd_pegarpizza"/>
+			<referrer name="cmd_comprarcasa"/>
 			<dependency name="DOF2_GetString"/>
 			<dependency name="DOF2_GetStringEx"/>
 			<param name="file">
@@ -2147,6 +2179,7 @@
 			<referrer name="cmd_createbank"/>
 			<referrer name="cmd_createcasa"/>
 			<referrer name="cmd_createemp"/>
+			<referrer name="cmd_createimo"/>
 			<dependency name="DOF2_SetString"/>
 			<dependency name="format"/>
 			<param name="file">
@@ -2184,6 +2217,8 @@
 			<referrer name="SalvarConta"/>
 			<referrer name="CheckOrgs"/>
 			<referrer name="CheckSaidas"/>
+			<referrer name="SSCANF_OnGameModeInit"/>
+			<referrer name="SSCANF_OnPlayerDisconnect"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
 			<referrer name="OnDialogResponse"/>
 			<referrer name="OnPlayerEnterRaceCheckpoint"/>
@@ -2202,6 +2237,8 @@
 			<referrer name="cmd_sethab"/>
 			<referrer name="cmd_createcasa"/>
 			<referrer name="cmd_createemp"/>
+			<referrer name="cmd_createimo"/>
+			<referrer name="cmd_comprarcasa"/>
 			<dependency name="DOF2_SetString"/>
 			<dependency name="format"/>
 			<param name="file">
@@ -2451,6 +2488,7 @@
 			<referrer name="cmd_createbank"/>
 			<referrer name="cmd_createcasa"/>
 			<referrer name="cmd_createemp"/>
+			<referrer name="cmd_createimo"/>
 			<dependency name="CurrentFile"/>
 			<dependency name="Entries_Line"/>
 			<dependency name="Entries_NextEntry"/>
@@ -2582,6 +2620,7 @@
 		<member name="M:Delete3DTextLabel" syntax="Delete3DTextLabel(id)">
 			<attribute name="native"/>
 			<referrer name="OnVehicleDeath"/>
+			<referrer name="cmd_comprarcasa"/>
 			<param name="id">
 				<paraminfo>Text3D </paraminfo>
 			</param>
@@ -2592,6 +2631,12 @@
 			<dependency name="PlayerTD"/>
 			<dependency name="PlayerTextDrawDestroy"/>
 			<param name="playerid">
+			</param>
+		</member>
+		<member name="M:DestroyPickup" syntax="DestroyPickup(pickup)">
+			<attribute name="native"/>
+			<referrer name="cmd_comprarcasa"/>
+			<param name="pickup">
 			</param>
 		</member>
 		<member name="M:DestroyVehicle" syntax="DestroyVehicle(vehicleid)">
@@ -2669,6 +2714,7 @@
 			<attribute name="native"/>
 			<referrer name="CheckOrgs"/>
 			<referrer name="CheckSaidas"/>
+			<referrer name="SSCANF_OnPlayerDisconnect"/>
 			<referrer name="cmd_ppos"/>
 			<param name="playerid">
 			</param>
@@ -2697,6 +2743,7 @@
 			<referrer name="SalvarConta"/>
 			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnDialogResponse"/>
+			<referrer name="cmd_comprarcasa"/>
 			<param name="playerid">
 			</param>
 		</member>
@@ -2717,7 +2764,6 @@
 			<referrer name="SalvarConta"/>
 			<referrer name="CheckOrgs"/>
 			<referrer name="CheckCasas"/>
-			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnDialogResponse"/>
 			<referrer name="cmd_m"/>
 			<referrer name="cmd_createhotel"/>
@@ -2733,6 +2779,7 @@
 			<referrer name="cmd_createbank"/>
 			<referrer name="cmd_createcasa"/>
 			<referrer name="cmd_createemp"/>
+			<referrer name="cmd_createimo"/>
 			<param name="playerid">
 			</param>
 			<param name="x">
@@ -2755,7 +2802,6 @@
 		<member name="M:GetPlayerSkin" syntax="GetPlayerSkin(playerid)">
 			<attribute name="native"/>
 			<referrer name="SalvarConta"/>
-			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
 			<param name="playerid">
 			</param>
@@ -2865,6 +2911,7 @@
 			<referrer name="CheckRadar"/>
 			<referrer name="cmd_pegarjornal"/>
 			<referrer name="cmd_pegarpizza"/>
+			<referrer name="cmd_comprarcasa"/>
 			<param name="playerid">
 			</param>
 			<param name="range">
@@ -2962,7 +3009,7 @@
 		</member>
 		<member name="M:OnDialogResponse" syntax="OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])">
 			<attribute name="public"/>
-			<stacksize value="1265"/>
+			<stacksize value="1393"/>
 			<dependency name="CreateVehicle"/>
 			<dependency name="DOF2_GetInt"/>
 			<dependency name="DOF2_GetString"/>
@@ -3521,13 +3568,12 @@
 		</member>
 		<member name="M:OnPlayerSpawn" syntax="OnPlayerSpawn(playerid)">
 			<attribute name="public"/>
-			<stacksize value="3134"/>
+			<stacksize value="3136"/>
 			<dependency name="operator==(Float:,_:)"/>
 			<dependency name="operator&lt;(Float:,Float:)"/>
+			<dependency name="DOF2_GetFloat"/>
 			<dependency name="DOF2_GetInt"/>
 			<dependency name="GetPlayerMoney"/>
-			<dependency name="GetPlayerPos"/>
-			<dependency name="GetPlayerSkin"/>
 			<dependency name="GivePlayerMoney"/>
 			<dependency name="IsPlayerNPC"/>
 			<dependency name="KillTimer"/>
@@ -3772,6 +3818,7 @@
 			<referrer name="CheckCasas"/>
 			<referrer name="CheckProfs"/>
 			<referrer name="SSCANF_OnPlayerConnect"/>
+			<referrer name="SSCANF_OnPlayerDisconnect"/>
 			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
 			<referrer name="OnDialogResponse"/>
@@ -3783,8 +3830,7 @@
 			<referrer name="cmd_pegarjornal"/>
 			<referrer name="cmd_pegarpizza"/>
 			<referrer name="cmd_sethab"/>
-			<referrer name="cmd_createcasa"/>
-			<referrer name="cmd_createemp"/>
+			<referrer name="cmd_comprarcasa"/>
 			<dependency name="GetPlayerName"/>
 			<dependency name="PlayerName"/>
 			<param name="playerid">
@@ -4033,10 +4079,11 @@
 		</member>
 		<member name="M:SSCANF_OnGameModeInit" syntax="SSCANF_OnGameModeInit()">
 			<attribute name="public"/>
-			<stacksize value="400"/>
+			<stacksize value="549"/>
 			<dependency name="Float:operator=(_:)"/>
 			<dependency name="ApplyActorAnimation"/>
 			<dependency name="Casas"/>
+			<dependency name="CasasID"/>
 			<dependency name="CasasT"/>
 			<dependency name="CmnhT"/>
 			<dependency name="CmnhT2"/>
@@ -4048,9 +4095,11 @@
 			<dependency name="DOF2_GetInt"/>
 			<dependency name="DOF2_GetString"/>
 			<dependency name="DOF2_GetString"/>
+			<dependency name="DOF2_SetInt"/>
 			<dependency name="DisableInteriorEnterExits"/>
 			<dependency name="Empresa"/>
 			<dependency name="EmpresaT"/>
+			<dependency name="EmpresasID"/>
 			<dependency name="EnableStuntBonusForAll"/>
 			<dependency name="Governo"/>
 			<dependency name="GovernoT"/>
@@ -4072,6 +4121,9 @@
 			<dependency name="actDetran"/>
 			<dependency name="actDetranT"/>
 			<dependency name="actDetranT2"/>
+			<dependency name="actImo"/>
+			<dependency name="actImoT"/>
+			<dependency name="actImoT2"/>
 			<dependency name="actPref"/>
 			<dependency name="actPrefT"/>
 			<dependency name="actPrefT2"/>
@@ -4114,10 +4166,14 @@
 		</member>
 		<member name="M:SSCANF_OnPlayerDisconnect" syntax="SSCANF_OnPlayerDisconnect(playerid, reason)">
 			<attribute name="public"/>
-			<stacksize value="4"/>
+			<stacksize value="136"/>
+			<dependency name="DOF2_SetInt"/>
+			<dependency name="GetPlayerInterior"/>
 			<dependency name="KillTimer"/>
 			<dependency name="Logado"/>
+			<dependency name="PlayerName"/>
 			<dependency name="SalvarConta"/>
+			<dependency name="format"/>
 			<dependency name="tmrKick"/>
 			<dependency name="tmrRadar"/>
 			<dependency name="tmrclock"/>
@@ -4188,6 +4244,8 @@
 			<referrer name="cmd_createcasa"/>
 			<referrer name="cmd_createemp"/>
 			<referrer name="cmd_setinterior"/>
+			<referrer name="cmd_createimo"/>
+			<referrer name="cmd_comprarcasa"/>
 			<param name="playerid">
 			</param>
 			<param name="color">
@@ -4482,6 +4540,33 @@
 			<param name="c">
 			</param>
 		</member>
+		<member name="M:cmd_comprarcasa" syntax="cmd_comprarcasa(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="566"/>
+			<dependency name="Casas"/>
+			<dependency name="CasasID"/>
+			<dependency name="CasasT"/>
+			<dependency name="Create3DTextLabel"/>
+			<dependency name="CreatePickup"/>
+			<dependency name="DOF2_GetFloat"/>
+			<dependency name="DOF2_GetInt"/>
+			<dependency name="DOF2_GetString"/>
+			<dependency name="DOF2_SetInt"/>
+			<dependency name="Delete3DTextLabel"/>
+			<dependency name="DestroyPickup"/>
+			<dependency name="GetPlayerMoney"/>
+			<dependency name="IsPlayerInRangeOfPoint"/>
+			<dependency name="PlayerName"/>
+			<dependency name="PlayerName"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<dependency name="strcmp"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
 		<member name="M:cmd_cores" syntax="cmd_cores(playerid, params[])">
 			<attribute name="public"/>
 			<stacksize value="5"/>
@@ -4557,8 +4642,10 @@
 		</member>
 		<member name="M:cmd_createcasa" syntax="cmd_createcasa(playerid, params[])">
 			<attribute name="public"/>
-			<stacksize value="3293"/>
+			<stacksize value="3268"/>
+			<dependency name="Casas"/>
 			<dependency name="CasasID"/>
+			<dependency name="CasasT"/>
 			<dependency name="Create3DTextLabel"/>
 			<dependency name="CreatePickup"/>
 			<dependency name="DOF2_CreateFile"/>
@@ -4568,8 +4655,6 @@
 			<dependency name="DOF2_SetString"/>
 			<dependency name="DOF2_WriteFile"/>
 			<dependency name="GetPlayerPos"/>
-			<dependency name="PlayerName"/>
-			<dependency name="PlayerName"/>
 			<dependency name="SendClientMessage"/>
 			<dependency name="format"/>
 			<dependency name="sscanf"/>
@@ -4623,7 +4708,7 @@
 		</member>
 		<member name="M:cmd_createemp" syntax="cmd_createemp(playerid, params[])">
 			<attribute name="public"/>
-			<stacksize value="3293"/>
+			<stacksize value="3269"/>
 			<dependency name="Create3DTextLabel"/>
 			<dependency name="CreatePickup"/>
 			<dependency name="DOF2_CreateFile"/>
@@ -4632,10 +4717,10 @@
 			<dependency name="DOF2_SetInt"/>
 			<dependency name="DOF2_SetString"/>
 			<dependency name="DOF2_WriteFile"/>
+			<dependency name="Empresa"/>
+			<dependency name="EmpresaT"/>
 			<dependency name="EmpresasID"/>
 			<dependency name="GetPlayerPos"/>
-			<dependency name="PlayerName"/>
-			<dependency name="PlayerName"/>
 			<dependency name="SendClientMessage"/>
 			<dependency name="format"/>
 			<dependency name="sscanf"/>
@@ -4646,6 +4731,27 @@
 			</param>
 		</member>
 		<member name="M:cmd_createhotel" syntax="cmd_createhotel(playerid, params[])">
+			<attribute name="public"/>
+			<stacksize value="30267"/>
+			<dependency name="Create3DTextLabel"/>
+			<dependency name="CreatePickup"/>
+			<dependency name="DOF2_CreateFile"/>
+			<dependency name="DOF2_SetFloat"/>
+			<dependency name="DOF2_SetInt"/>
+			<dependency name="DOF2_WriteFile"/>
+			<dependency name="GetPlayerPos"/>
+			<dependency name="Governo"/>
+			<dependency name="GovernoT"/>
+			<dependency name="OrgsID"/>
+			<dependency name="SendClientMessage"/>
+			<dependency name="format"/>
+			<param name="playerid">
+			</param>
+			<param name="params">
+				<paraminfo> [] </paraminfo>
+			</param>
+		</member>
+		<member name="M:cmd_createimo" syntax="cmd_createimo(playerid, params[])">
 			<attribute name="public"/>
 			<stacksize value="30267"/>
 			<dependency name="Create3DTextLabel"/>
@@ -5121,6 +5227,7 @@
 			<referrer name="CheckProfs"/>
 			<referrer name="SSCANF_OnGameModeInit"/>
 			<referrer name="SSCANF_OnPlayerConnect"/>
+			<referrer name="SSCANF_OnPlayerDisconnect"/>
 			<referrer name="OnPlayerSpawn"/>
 			<referrer name="OnPlayerClickPlayerTextDraw"/>
 			<referrer name="OnDialogResponse"/>
@@ -5145,6 +5252,8 @@
 			<referrer name="cmd_sethab"/>
 			<referrer name="cmd_createcasa"/>
 			<referrer name="cmd_createemp"/>
+			<referrer name="cmd_createimo"/>
+			<referrer name="cmd_comprarcasa"/>
 			<param name="output">
 				<paraminfo> [] </paraminfo>
 			</param>
@@ -5372,6 +5481,7 @@
 			<referrer name="OnDialogResponse"/>
 			<referrer name="cmd_pegarjornal"/>
 			<referrer name="cmd_pegarpizza"/>
+			<referrer name="cmd_comprarcasa"/>
 			<param name="string1">
 				<paraminfo> [] </paraminfo>
 			</param>
