@@ -4079,3 +4079,188 @@ v0.3.7-R2, (C)2005-2015 SA-MP Team
 [16:34:04] [debug] Run time error 5: "Invalid memory access"
 [16:34:04] [debug] AMX backtrace:
 [16:34:04] [debug] #0 00020668 in public OnPlayerSpawn (0) in PhantomRP.amx
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[21:50:00] filterscripts = ""  (string)
+[21:50:00] 
+[21:50:00] Server Plugins
+[21:50:00] --------------
+[21:50:00]  Loading plugin: sscanf
+[21:50:01] 
+
+[21:50:01]  ===============================
+
+[21:50:01]       sscanf plugin loaded.     
+
+[21:50:01]    (c) 2009 Alex "Y_Less" Cole
+
+[21:50:01]    0.3d-R2 500 Players "dnee"
+
+[21:50:01]  ===============================
+
+[21:50:01]   Loaded.
+[21:50:01]  Loading plugin: streamer
+[21:50:01] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[21:50:01]   Loaded.
+[21:50:01]  Loading plugin: crashdetect
+[21:50:01]   CrashDetect must be loaded before 'streamer.DLL'
+[21:50:01]   Failed.
+[21:50:01]  Loaded 2 plugins.
+
+[21:50:02] 
+[21:50:02] Filterscripts
+[21:50:02] ---------------
+[21:50:02]   Loaded 0 filterscripts.
+
+[21:50:02] ==================[PhantomRP]==================
+[21:50:02] =                                             =
+[21:50:02] =             Servidor carregado.             =
+[21:50:02] =            107 Radares Carregados.           =
+[21:50:02] =                                             =
+[21:50:02] ==================[PhantomRP]==================
+[21:50:02] Number of vehicle models: 0
+[21:51:46] [connection] 127.0.0.1:50846 requests connection cookie.
+[21:51:47] [connection] incoming connection: 127.0.0.1:50846 id: 0
+[21:51:48] [join] J_otace has joined the server (0:127.0.0.1)
+[21:53:04] [part] J_otace has left the server (0:1)
+[21:53:33] [connection] 127.0.0.1:57783 requests connection cookie.
+[21:53:34] [connection] incoming connection: 127.0.0.1:57783 id: 0
+[21:53:35] [join] J_otace has joined the server (0:127.0.0.1)
+[22:11:49] [part] J_otace has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[13:17:47] filterscripts = ""  (string)
+[13:17:47] 
+[13:17:47] Server Plugins
+[13:17:47] --------------
+[13:17:47]  Loading plugin: sscanf
+[13:17:47] 
+
+[13:17:47]  ===============================
+
+[13:17:47]       sscanf plugin loaded.     
+
+[13:17:47]    (c) 2009 Alex "Y_Less" Cole
+
+[13:17:47]    0.3d-R2 500 Players "dnee"
+
+[13:17:47]  ===============================
+
+[13:17:47]   Loaded.
+[13:17:47]  Loading plugin: streamer
+[13:17:47] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[13:17:47]   Loaded.
+[13:17:47]  Loading plugin: crashdetect
+[13:17:47]   CrashDetect must be loaded before 'streamer.DLL'
+[13:17:47]   Failed.
+[13:17:47]  Loaded 2 plugins.
+
+[13:17:48] 
+[13:17:48] Filterscripts
+[13:17:48] ---------------
+[13:17:48]   Loaded 0 filterscripts.
+
+[13:17:49] ==================[PhantomRP]==================
+[13:17:49] =                                             =
+[13:17:49] =             Servidor carregado.             =
+[13:17:49] =            107 Radares Carregados.           =
+[13:17:49] =                                             =
+[13:17:49] ==================[PhantomRP]==================
+[13:17:49] Number of vehicle models: 0
+[13:18:13] [connection] 127.0.0.1:60044 requests connection cookie.
+[13:18:15] [connection] incoming connection: 127.0.0.1:60044 id: 0
+[13:18:15] [join] J_otace has joined the server (0:127.0.0.1)
+[13:18:24] [part] J_otace has left the server (0:1)
+[13:18:48] [connection] 127.0.0.1:56628 requests connection cookie.
+[13:18:49] [connection] incoming connection: 127.0.0.1:56628 id: 0
+[13:18:50] [join] J_otace has joined the server (0:127.0.0.1)
+[13:42:59] [chat] [J_otace]: 1408.608398, 1897.006347, 11.460937, 273.316070
+[13:46:45] [chat] [J_otace]: 1408.608398, 1897.006347, 11.460937, 
+[19:47:07] [part] J_otace has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:49:57] filterscripts = ""  (string)
+[19:49:57] 
+[19:49:57] Server Plugins
+[19:49:57] --------------
+[19:49:57]  Loading plugin: sscanf
+[19:49:57] 
+
+[19:49:57]  ===============================
+
+[19:49:57]       sscanf plugin loaded.     
+
+[19:49:57]    (c) 2009 Alex "Y_Less" Cole
+
+[19:49:57]    0.3d-R2 500 Players "dnee"
+
+[19:49:57]  ===============================
+
+[19:49:57]   Loaded.
+[19:49:57]  Loading plugin: streamer
+[19:49:57] 
+
+*** Streamer Plugin v2.9.4 by Incognito loaded ***
+
+[19:49:57]   Loaded.
+[19:49:57]  Loading plugin: crashdetect
+[19:49:57]   CrashDetect must be loaded before 'streamer.DLL'
+[19:49:57]   Failed.
+[19:49:57]  Loaded 2 plugins.
+
+[19:49:57] 
+[19:49:57] Filterscripts
+[19:49:57] ---------------
+[19:49:57]   Loaded 0 filterscripts.
+
+[19:49:57] ==================[PhantomRP]==================
+[19:49:57] =                                             =
+[19:49:57] =             Servidor carregado.             =
+[19:49:57] =            107 Radares Carregados.           =
+[19:49:57] =                                             =
+[19:49:57] ==================[PhantomRP]==================
+[19:49:57] Number of vehicle models: 0
+[19:50:28] [connection] 127.0.0.1:61368 requests connection cookie.
+[19:50:29] [connection] incoming connection: 127.0.0.1:61368 id: 0
+[19:50:29] [join] J_otace has joined the server (0:127.0.0.1)
+[19:50:57] [part] J_otace has left the server (0:1)
+[19:51:19] [connection] 127.0.0.1:61369 requests connection cookie.
+[19:51:21] [connection] incoming connection: 127.0.0.1:61369 id: 0
+[19:51:22] [join] J_otace has joined the server (0:127.0.0.1)
+[19:51:41] [part] J_otace has left the server (0:1)
+[19:52:05] [connection] 127.0.0.1:61370 requests connection cookie.
+[19:52:06] [connection] incoming connection: 127.0.0.1:61370 id: 0
+[19:52:07] [join] J_otace has joined the server (0:127.0.0.1)
+[19:52:56] [part] J_otace has left the server (0:1)
+[19:54:17] [connection] 127.0.0.1:54049 requests connection cookie.
+[19:54:20] [connection] incoming connection: 127.0.0.1:54049 id: 0
+[19:54:20] [join] J_otace has joined the server (0:127.0.0.1)
+[20:33:23] [death] J_otace died 54
+[20:51:09] [part] J_otace has left the server (0:1)

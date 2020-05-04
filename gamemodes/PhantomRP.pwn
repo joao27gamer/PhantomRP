@@ -57,7 +57,7 @@
 #define EMPRESAS "Empresas/%d.ini"
 #define MAX_ORGS 100
 #define MAX_SAIDAS 50
-#define MAX_CASAS 350
+#define MAX_CASAS 1000
 #define MAX_EMPRESAS 150
 #define MAP_HQ 0
 
@@ -1431,6 +1431,8 @@ public OnGameModeInit(){
 		CreateObject(3471, 1146.82715, -1771.55505, 16.81960,   0.00000, 0.00000, 90.00000);
 		CreateObject(3471, 1160.71277, -1771.49805, 16.81960,   0.00000, 0.00000, 90.00000);
 		CreateObject(13360, 363.5, 165.3, 1025.7, 0.00000, 0.00000, 0.00000);
+		CreateObject(13360, 2037.273803, 2721.122314, 11.543558, 0.00000, 0.00000, 178.363723);
+		CreateObject(13360, 1408.608398, 1897.006347, 11.460937, 0.00000, 0.00000, 273.316070);
     return 1;
 }
 
